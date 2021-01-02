@@ -4,13 +4,51 @@
 
 @section('content')
     <!--====== SERVICES PART START ======-->
+    @php
+        $about = \App\AboutAdmin::find(1);
+        $slider = \App\Slider::all();
+    @endphp
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible " role="alert">
+            <strong>{{ session('success') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
 
-    <section class="services_area pt-110">
+    <div id="home" class="header_hero slider-active">
+        @foreach ($slider as $sliders)
+            <div class="single_slider bg_cover d-flex align-items-center"
+                 style="background-image: url({{asset('images/slider/'.$sliders->img_slider)}})">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-10 col-sm-11">
+                            <div class="slider_content">
+                                @if(LaravelLocalization::getCurrentLocale() == 'ar')
+                                    <h3 class="title" data-animation="fadeInUp"
+                                        data-delay="0.2s">{{$sliders->title_ar}}</h3>
+                                @elseif(LaravelLocalization::getCurrentLocale() == 'en')
+                                    <h3 class="title" data-animation="fadeInUp"
+                                        data-delay="0.2s">{{$sliders->title_en}}</h3>
+                                @else
+                                    <h3 class="title" data-animation="fadeInUp"
+                                        data-delay="0.2s">{{$sliders->title_fr}}</h3>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
+    <section class="services_area pt-110" id="service">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center pb-25">
-                        <h4 class="title">Our Services</h4>
+                        <h4 class="title">@lang("words.our_services")</h4>
                         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                             sed diam nonumy eirmod tempor
                             invidunt labore et dolor.</p>
@@ -122,10 +160,10 @@
 
                         <div class="about_social">
                             <ul class="social">
-                                <li><a href="javscript:void(0)"><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href="javscript:void(0)"><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href="javscript:void(0)"><i class="lni lni-instagram-original"></i></a></li>
-                                <li><a href="javscript:void(0)"><i class="lni lni-linkedin-original"></i></a></li>
+                                <li><a href={{$about->facebook}}><i class="lni lni-facebook-filled"></i></a></li>
+                                <li><a href={{$about->twitter}}><i class="lni lni-twitter-original"></i></a></li>
+                                <li><a href={{$about->instagram}}><i class="lni lni-instagram-original"></i></a></li>
+                                <li><a href={{$about->youtube}}><i class="lni lni-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -171,158 +209,6 @@
     </section>
 
     <!--====== ABOUT PART ENDS ======-->
-
-    <!--====== GALLERY PART START ======-->
-
-    <section class="gallery_area pt-110 pb-120" id="service">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center pb-25">
-                        <h4 class="title">Photo Gallery</h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                            sed diam nonumy eirmod tempor
-                            invidunt labore et dolor.</p>
-                    </div> <!-- section title -->
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-1.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-2.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-3.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-4.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-5.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-6.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-7.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                    <div class="single_gallery">
-                        <img src="assets/images/gallery-8.jpg" alt="gallery">
-                        <p>Fashion Photography</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--====== GALLERY PART ENDS ======-->
-
-    <!--====== VIDEO PART START ======-->
-
-    <section class="pt-110">
-        <div class="container text-center">
-            <h1>You are using free lite version of the template</h1>
-            <p>Please purchase full version of the template get all pages, features and permission to remove footer
-                credits</p></br>
-            <a href="https://rebrand.ly/photography-gg" class="main-btn">Purchase Now</a>
-        </div>
-    </section>
-
-
-    <!--====== CLIENT PART ENDS ======-->
-
-    <!--====== INSTAGRAM PART START ======-->
-
-    <section class="instagram_area pt-110">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center pb-25">
-                        <h4 class="title">Instagram Post</h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt labore et dolor.</p>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3 col-6">
-                    <div class="single_instagram mt-30 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                        <a href="javascript:void(0)">
-                            <img src="assets/images/instagram-1.jpg" alt="instagram">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="single_instagram mt-30 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.4s">
-                        <a href="javascript:void(0)">
-                            <img src="assets/images/instagram-2.jpg" alt="instagram">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="single_instagram mt-30 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.6s">
-                        <a href="javascript:void(0)">
-                            <img src="assets/images/instagram-3.jpg" alt="instagram">
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-3 col-6">
-                    <div class="single_instagram mt-30 wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.8s">
-                        <a href="javascript:void(0)">
-                            <img src="assets/images/instagram-4.jpg" alt="instagram">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--====== INSTAGRAM PART ENDS ======-->
-    <section class="video_area pt-110">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center pb-60">
-                        <h4 class="title">Weeding Party Video</h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                            invidunt labore et dolor.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="video wow fadeIn" data-wow-duration="1.3s" data-wow-delay="0.4s"
-                         style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.4s; animation-name: fadeIn;">
-                        <img src="https://demo.graygrids.com/themes/photography/assets/images/video_bg.jpg" alt="video">
-                        <a class="play video-popup" href="https://www.youtube.com/watch?v=cFuYG1rsSuA"><i
-                                class="lni lni-play"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--====== CONTACT PART START ======-->
-
     <section class="contact_area pt-110 pb-120" id="contact">
         <div class="container">
             <div class="row justify-content-center">
@@ -333,15 +219,21 @@
                 </div>
             </div> <!-- row -->
 
-            <form id="contact-form" action="assets/contact.php" method="POST" class="wow fadeInUpBig"
+            <form id="contact-form" action="{{route('email.store')}}" method="POST"
+                  class="wow fadeInUpBig" enctype="multipart/form-data"
                   data-wow-duration="1.3s" data-wow-delay="0.5s">
+                @method('POST')
+                @csrf
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="single_form">
                             <input type="text" name="name" placeholder="Name">
                         </div>
                         <div class="single_form">
-                            <input type="email" name="email" placeholder="Email">
+                            <input type="email" name="email" placeholder="Email" required>
+                            @error('email')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div class="single_form">
                             <input type="text" name="subject" placeholder="Subject">
@@ -349,13 +241,16 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="single_form">
-                            <textarea name="massage" placeholder="Massage"></textarea>
+                            <textarea name="massage" placeholder="Massage" required></textarea>
+                            @error('massage')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <p class="form-message"></p>
                     <div class="col-lg-12">
                         <div class="single_form">
-                            <button type="submit" class="main-btn">Sand Massage</button>
+                            <button type="submit" class="main-btn">@lang("words.send_msg")</button>
                         </div>
                     </div>
                 </div>
@@ -367,33 +262,13 @@
 
     <!--====== MAP PART START ======-->
 
-    <section class="map_area">
+    <section class="map_area" id="maps">
         <div class="gmap_canvas">
             <iframe id="gmap_canvas"
                     src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed"
                     frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         </div>
     </section>
-
     <!--====== MAP PART ENDS ======-->
-
-
-    <ul>
-        @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-            <li>
-                <a rel="alternate" hreflang="{{ $localeCode }}"
-                   href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
-                    {{ $properties['native'] }}
-                </a>
-            </li>
-        @endforeach
-    </ul>
-
-    @lang('name')
-
-    @foreach($sliders as $slider)
-        {{$slider->title}}
-    @endforeach
-
 @endsection
 

@@ -1,16 +1,16 @@
 <!--====== HEADER PART START ======-->
 @php
     $cat = \App\CategoriesAdmin::all();
-    $slider = \App\Slider::all();
+
 @endphp
 
-<section class="header_area" id="#index">
+<section class="header_area" id="index">
     <div class="header_navbar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand">
                             <img src="assets/images/logo.svg" alt="Logo">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -22,7 +22,8 @@
                             <span class="toggler-icon"></span>
                         </button>
 
-                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse sub-menu-bar"
+                             id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ml-auto">
                                 <li class="nav-item active">
                                     <a href="#index">@lang("words.home")</a>
@@ -38,17 +39,20 @@
                                     <div class="dropdown-content">
                                         @foreach ($cat as $category)
                                             @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                                <a href="#">{{$category->name_categorie_ar}}</a>
+                                                <a href="{{ route('category.edit', $category->id) }}">{{$category->name_categorie_ar}}</a>
                                             @elseif(LaravelLocalization::getCurrentLocale() == 'en')
-                                                <a href="#">{{$category->name_categorie_en}}</a>
+                                                <a href="{{ route('category.edit', $category->id) }}">{{$category->name_categorie_en}}</a>
                                             @else
-                                                <a href="#">{{$category->name_categorie_fr}}</a>
+                                                <a href="{{ route('category.edit', $category->id) }}">{{$category->name_categorie_fr}}</a>
                                             @endif
                                         @endforeach
                                     </div>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#contact">@lang("words.contact")</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#maps">@lang("words.maps")</a>
                                 </li>
                             </ul>
                         </div>
@@ -103,31 +107,7 @@
     </div>
 
 
-    <div id="home" class="header_hero slider-active">
-        @foreach ($slider as $sliders)
-            <div class="single_slider bg_cover d-flex align-items-center"
-                 style="background-image: url({{asset('images/slider/'.$sliders->img_slider)}})">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-10 col-sm-11">
-                            <div class="slider_content">
-                                @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                    <h3 class="title" data-animation="fadeInUp"
-                                        data-delay="0.2s">{{$sliders->title_ar}}</h3>
-                                @elseif(LaravelLocalization::getCurrentLocale() == 'en')
-                                    <h3 class="title" data-animation="fadeInUp"
-                                        data-delay="0.2s">{{$sliders->title_en}}</h3>
-                                @else
-                                    <h3 class="title" data-animation="fadeInUp"
-                                        data-delay="0.2s">{{$sliders->title_fr}}</h3>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-    </div>
+
 </section>
 
 <!--====== HEADER PART ENDS ======-->

@@ -13,4 +13,5 @@ class IndexController extends Controller
         $sliders = Slider::select('id','title_'.LaravelLocalization::getCurrentLocale().' as title' )->get();
         return view('website.pages.index',compact('sliders'));
     }
+
 }

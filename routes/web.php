@@ -33,4 +33,5 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
     ], function(){
      Route::get('/', 'IndexController@index');
+     Route::resource('/category', 'CategoryController');
 });

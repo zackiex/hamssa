@@ -35,7 +35,20 @@ class EmailAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'min:3|max:191|nullable',
+            'email' => 'email:rfc,dns|required|min:3|max:191',
+            'subject' => 'required|min:3|max:191|nullable',
+            'massage' => 'required|min:3|max:800',
+        ]);
+
+        $data = new EmailAdmin();
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->subject = $request->subject;
+        $data->message = $request->massage;
+        $data->save();
+        return redirect('/')->with('success', 'Email envoyé avec success');
     }
 
     /**
