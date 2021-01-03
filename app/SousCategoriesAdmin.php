@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SousCategoriesAdmin extends Model
 {
     protected $appends = [
-        'name_categorie',
+        'id_categorie',
         'sous_categorie_fr',
         'sous_categorie_en',
         'sous_categorie_ar',
@@ -33,7 +33,9 @@ class SousCategoriesAdmin extends Model
         'agency_ar',
         'project_fr',
         'project_ar',
+        'img_sous_category'
     ];
+
     public function category(){
         return $this->belongsTo(CategoriesAdmin::class,'id_categorie')->withDefault();
     }

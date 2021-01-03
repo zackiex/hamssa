@@ -34,4 +34,5 @@ Route::group(
     ], function(){
      Route::get('/', 'IndexController@index');
      Route::resource('/category', 'CategoryController');
+     Route::resource('/vedioshow', 'VedioshowController');
 });

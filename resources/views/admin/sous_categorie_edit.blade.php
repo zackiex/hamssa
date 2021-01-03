@@ -143,6 +143,16 @@
                     @enderror
                 </div>
             </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label" for="example-file-input">Image pour votre vedio <span
+                        class="text-danger">*</span></label></label>
+                <div class="col-md-9">
+                    <input type="file" name="img_sous_category">
+                    @error('img_sous_category')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
             <div class="alert alert-warning col-md control-label center-block" role="alert"
                  style="-webkit-border-radius: 999px;border-left: 500px">
                 <h4 class="alert-heading text-center"><br>

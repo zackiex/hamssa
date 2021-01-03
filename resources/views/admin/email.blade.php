@@ -1,113 +1,13 @@
 @extends('layouts.master')
 
 @section('content')
-    <header class="navbar navbar-inverse navbar-fixed-top">
-        <!-- Left Header Navigation -->
-        <ul class="nav navbar-nav-custom">
-            <!-- Main Sidebar Toggle Button -->
-            <li>
-                <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar');this.blur();">
-                    <i class="fa fa-ellipsis-v fa-fw animation-fadeInRight" id="sidebar-toggle-mini"></i>
-                    <i class="fa fa-bars fa-fw animation-fadeInRight" id="sidebar-toggle-full"></i>
-                </a>
-            </li>
-            <!-- END Main Sidebar Toggle Button -->
-
-            <!-- Header Link -->
-            <li class="hidden-xs animation-fadeInQuick">
-                <a href=""><strong>EMAIL CENTER</strong></a>
-            </li>
-            <!-- END Header Link -->
-        </ul>
-        <!-- END Left Header Navigation -->
-
-        <!-- Right Header Navigation -->
-        <ul class="nav navbar-nav-custom pull-right">
-            <!-- Search Form -->
-            <li>
-                <form action="page_ready_search_results.html" method="post" class="navbar-form-custom">
-                    <input type="text" id="top-search" name="top-search" class="form-control" placeholder="Search..">
-                </form>
-            </li>
-            <!-- END Search Form -->
-
-            <!-- Alternative Sidebar Toggle Button -->
-            <li>
-                <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt');this.blur();">
-                    <i class="gi gi-settings"></i>
-                </a>
-            </li>
-            <!-- END Alternative Sidebar Toggle Button -->
-
-            <!-- User Dropdown -->
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                    <img src="img/placeholders/avatars/avatar9.jpg" alt="avatar">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right">
-                    <li class="dropdown-header">
-                        <strong>ADMINISTRATOR</strong>
-                    </li>
-                    <li>
-                        <a href="page_app_email.html">
-                            <i class="fa fa-inbox fa-fw pull-right"></i>
-                            Inbox
-                        </a>
-                    </li>
-                    <li>
-                        <a href="page_app_social.html">
-                            <i class="fa fa-pencil-square fa-fw pull-right"></i>
-                            Profile
-                        </a>
-                    </li>
-                    <li>
-                        <a href="page_app_media.html">
-                            <i class="fa fa-picture-o fa-fw pull-right"></i>
-                            Media Manager
-                        </a>
-                    </li>
-                    <li class="divider">
-                    <li>
-                    <li>
-                        <a href="javascript:void(0)" onclick="App.sidebar('toggle-sidebar-alt');">
-                            <i class="gi gi-settings fa-fw pull-right"></i>
-                            Settings
-                        </a>
-                    </li>
-                    <li>
-                        <a href="page_ready_lock_screen.html">
-                            <i class="gi gi-lock fa-fw pull-right"></i>
-                            Lock Account
-                        </a>
-                    </li>
-                    <li>
-                        <a href="page_ready_login.html">
-                            <i class="fa fa-power-off fa-fw pull-right"></i>
-                            Log out
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <!-- END User Dropdown -->
-        </ul>
-        <!-- END Right Header Navigation -->
-    </header>
-    <!-- END Header -->
-
-    <!-- Page content -->
-    <!--
-        Available classes when #page-content-sidebar is used:
-
-        'inner-sidebar-left'      for a left inner sidebar
-        'inner-sidebar-right'     for a right inner sidebar
-    -->
     <div id="page-content" class="inner-sidebar-left">
         <!-- Inner Sidebar -->
         <div id="page-content-sidebar">
             <!-- Compose Message (Modal markup is at the bottom of this page before including JS scripts) -->
             <div class="block-section">
                 <a href="#modal-compose" class="btn btn-effect-ripple btn-block btn-success" data-toggle="modal"><i
-                        class="fa fa-pencil"></i> Compose Message</a>
+                        class="fa fa-pencil"></i>Compose Message</a>
             </div>
             <!-- END Compose Message -->
 
@@ -125,73 +25,14 @@
                         </li>
                         <li>
                             <a href="javascript:void(0)">
-                                <i class="fa fa-fw fa-star icon-push"></i> <strong>Starred</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-fw fa-exclamation-circle icon-push"></i> <strong>Important</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
                                 <i class="fa fa-fw fa-send icon-push"></i> <strong>Sent</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-fw fa-pencil-square-o icon-push"></i> <strong>Draft</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-fw fa-folder icon-push"></i> <strong>Archive</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-fw fa-trash-o icon-push"></i> <strong>Trash</strong>
                             </a>
                         </li>
                     </ul>
                 </div>
                 <!-- END Menu -->
-
-                <!-- Labels -->
-                <div class="block-section">
-                    <h4 class="inner-sidebar-header">
-                        <a href="javascript:void(0)" class="btn btn-effect-ripple btn-xs btn-default pull-right"><i
-                                class="fa fa-plus"></i></a>
-                        Labels
-                    </h4>
-                    <ul class="nav nav-pills nav-stacked nav-icons">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-fw fa-circle icon-push text-info"></i> <strong>Later</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-fw fa-circle icon-push text-warning"></i> <strong>Family</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-fw fa-circle icon-push text-danger"></i> <strong>Projects</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-fw fa-circle icon-push text-success"></i> <strong>Work</strong>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- END Labels -->
             </div>
-            <!-- END Collapsible Navigation -->
         </div>
-        <!-- END Inner Sidebar -->
 
         <!-- Email Center Content -->
         <div class="block overflow-hidden">
@@ -201,8 +42,8 @@
                 <div class="block-title clearfix">
                     <div class="block-options pull-right">
                         <a href="javascript:void(0)" class="btn btn-effect-ripple btn-default"><i
-                                class="fa fa-arrow-left"></i> Prev</a>
-                        <a href="javascript:void(0)" class="btn btn-effect-ripple btn-default">Next <i
+                                class="fa fa-arrow-left"></i> Précédent</a>
+                        <a href="javascript:void(0)" class="btn btn-effect-ripple btn-default">Suivant <i
                                 class="fa fa-arrow-right"></i></a>
                     </div>
                     <div class="block-options pull-left">
@@ -240,156 +81,6 @@
                             </td>
                             <td class="hidden-xs text-right text-muted" style="width: 120px;"><em>just now</em></td>
                         </tr>
-                        <tr>
-                            <td class="td-label td-label-danger text-center">
-                                <label class="csscheckbox csscheckbox-primary"><input
-                                        type="checkbox"><span></span></label>
-                            </td>
-                            <td class="text-center">
-                                <img src="img/placeholders/avatars/avatar5.jpg" alt="avatar" class="img-circle">
-                            </td>
-                            <td>
-                                <h4><a href="javascript:void(0)" class="text-dark"><strong>New friend
-                                            request</strong></a></h4>
-                                <span class="text-muted">This is the preview text of this message..</span>
-                            </td>
-                            <td class="hidden-xs">
-                                <i class="fa fa-paperclip fa-2x text-muted"></i>
-                            </td>
-                            <td class="hidden-xs text-right text-muted"><em>15 min ago</em></td>
-                        </tr>
-                        <tr>
-                            <td class="td-label td-label-success text-center">
-                                <label class="csscheckbox csscheckbox-primary"><input
-                                        type="checkbox"><span></span></label>
-                            </td>
-                            <td class="text-center">
-                                <img src="img/placeholders/avatars/avatar8.jpg" alt="avatar" class="img-circle">
-                            </td>
-                            <td>
-                                <h4>
-                                    <a href="javascript:void(0)" class="text-dark"><strong>New project details</strong></a>
-                                </h4>
-                                <span class="text-muted">This is the preview text of this message..</span>
-                            </td>
-                            <td class="hidden-xs"></td>
-                            <td class="hidden-xs text-right text-muted"><em>40 min ago</em></td>
-                        </tr>
-                        <tr>
-                            <td class="td-label td-label-success text-center">
-                                <label class="csscheckbox csscheckbox-primary"><input
-                                        type="checkbox"><span></span></label>
-                            </td>
-                            <td class="text-center">
-                                <img src="img/placeholders/avatars/avatar14.jpg" alt="avatar" class="img-circle">
-                            </td>
-                            <td>
-                                <h4><a href="javascript:void(0)" class="text-dark"><strong>Hi admin</strong></a></h4>
-                                <span class="text-muted">This is the preview text of this message..</span>
-                            </td>
-                            <td class="hidden-xs"></td>
-                            <td class="hidden-xs text-right text-muted"><em>1 hour ago</em></td>
-                        </tr>
-                        <tr>
-                            <td class="td-label td-label-warning text-center">
-                                <label class="csscheckbox csscheckbox-primary"><input
-                                        type="checkbox"><span></span></label>
-                            </td>
-                            <td class="text-center">
-                                <img src="img/placeholders/avatars/avatar13.jpg" alt="avatar" class="img-circle">
-                            </td>
-                            <td>
-                                <h4><a href="javascript:void(0)" class="text-dark"><strong>Balance changed</strong></a>
-                                </h4>
-                                <span class="text-muted">This is the preview text of this message..</span>
-                            </td>
-                            <td class="hidden-xs"></td>
-                            <td class="hidden-xs text-right text-muted"><em>2 hours ago</em></td>
-                        </tr>
-                        <tr>
-                            <td class="td-label td-label-info text-center">
-                                <label class="csscheckbox csscheckbox-primary"><input
-                                        type="checkbox"><span></span></label>
-                            </td>
-                            <td class="text-center">
-                                <img src="img/placeholders/avatars/avatar12.jpg" alt="avatar" class="img-circle">
-                            </td>
-                            <td>
-                                <h4><a href="javascript:void(0)" class="text-dark"><strong>Just wanted to say
-                                            hi</strong></a></h4>
-                                <span class="text-muted">This is the preview text of this message..</span>
-                            </td>
-                            <td class="hidden-xs"></td>
-                            <td class="hidden-xs text-right text-muted"><em>5 hours ago</em></td>
-                        </tr>
-                        <tr>
-                            <td class="td-label td-label-info text-center">
-                                <label class="csscheckbox csscheckbox-primary"><input
-                                        type="checkbox"><span></span></label>
-                            </td>
-                            <td class="text-center">
-                                <img src="img/placeholders/avatars/avatar15.jpg" alt="avatar" class="img-circle">
-                            </td>
-                            <td>
-                                <h4><a href="javascript:void(0)" class="text-dark"><strong>Building a new
-                                            website</strong></a></h4>
-                                <span class="text-muted">This is the preview text of this message..</span>
-                            </td>
-                            <td class="hidden-xs"></td>
-                            <td class="hidden-xs text-right text-muted"><em>10 hours ago</em></td>
-                        </tr>
-                        <tr>
-                            <td class="td-label td-label-danger text-center">
-                                <label class="csscheckbox csscheckbox-primary"><input
-                                        type="checkbox"><span></span></label>
-                            </td>
-                            <td class="text-center">
-                                <img src="img/placeholders/avatars/avatar11.jpg" alt="avatar" class="img-circle">
-                            </td>
-                            <td>
-                                <h4>
-                                    <a href="javascript:void(0)" class="text-dark"><strong>Your subscription was
-                                            updated</strong></a>
-                                </h4>
-                                <span class="text-muted">This is the preview text of this message..</span>
-                            </td>
-                            <td class="hidden-xs">
-                                <i class="fa fa-paperclip fa-2x text-muted"></i>
-                            </td>
-                            <td class="hidden-xs text-right text-muted"><em>2 days ago</em></td>
-                        </tr>
-                        <tr>
-                            <td class="td-label td-label-danger text-center">
-                                <label class="csscheckbox csscheckbox-primary"><input
-                                        type="checkbox"><span></span></label>
-                            </td>
-                            <td class="text-center">
-                                <img src="img/placeholders/avatars/avatar8.jpg" alt="avatar" class="img-circle">
-                            </td>
-                            <td>
-                                <h4><a href="javascript:void(0)" class="text-dark"><strong>A great opportunity</strong></a>
-                                </h4>
-                                <span class="text-muted">This is the preview text of this message..</span>
-                            </td>
-                            <td class="hidden-xs"></td>
-                            <td class="hidden-xs text-right text-muted"><em>1 week ago</em></td>
-                        </tr>
-                        <tr>
-                            <td class="td-label td-label-success text-center">
-                                <label class="csscheckbox csscheckbox-primary"><input
-                                        type="checkbox"><span></span></label>
-                            </td>
-                            <td class="text-center">
-                                <img src="img/placeholders/avatars/avatar5.jpg" alt="avatar" class="img-circle">
-                            </td>
-                            <td>
-                                <h4><a href="javascript:void(0)" class="text-dark"><strong>Account
-                                            Activation</strong></a></h4>
-                                <span class="text-muted">This is the preview text of this message..</span>
-                            </td>
-                            <td class="hidden-xs"></td>
-                            <td class="hidden-xs text-right text-muted"><em>2 weeks ago</em></td>
-                        </tr>
                         </tbody>
                     </table>
                 </div>
@@ -409,7 +100,7 @@
                     </div>
                     <div class="block-options pull-left">
                         <a href="javascript:void(0)" class="btn btn-effect-ripple btn-default" id="message-view-back"><i
-                                class="fa fa-chevron-left"></i> Back to Inbox</a>
+                                class="fa fa-chevron-left"></i> Retour à la boîte de réception</a>
                     </div>
                 </div>
                 <!-- END Title -->
@@ -462,32 +153,14 @@
                         </a>
                         <span class="text-muted">IMG0001.JPG</span>
                     </div>
-                    <div class="col-xs-6 col-sm-3 col-lg-2 text-center">
-                        <a href="img/placeholders/photos/photo16.jpg" data-toggle="lightbox-image">
-                            <img src="img/placeholders/photos/photo16.jpg" alt="photo" class="img-responsive push-bit">
-                        </a>
-                        <span class="text-muted">IMG0002.JPG</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 col-lg-2 text-center">
-                        <a href="img/placeholders/photos/photo9.jpg" data-toggle="lightbox-image">
-                            <img src="img/placeholders/photos/photo9.jpg" alt="photo" class="img-responsive push-bit">
-                        </a>
-                        <span class="text-muted">IMG0003.JPG</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 col-lg-2 text-center">
-                        <a href="img/placeholders/photos/photo15.jpg" data-toggle="lightbox-image">
-                            <img src="img/placeholders/photos/photo15.jpg" alt="photo" class="img-responsive push-bit">
-                        </a>
-                        <span class="text-muted">IMG0004.JPG</span>
-                    </div>
                 </div>
                 <!-- END Attachments Row -->
 
                 <!-- Quick Reply Form -->
                 <form action="page_app_email.html" method="post" onsubmit="return false;">
                     <textarea id="message-quick-reply" name="message-quick-reply" rows="5" class="form-control push-bit"
-                              placeholder="Your message.."></textarea>
-                    <button class="btn btn-effect-ripple btn-primary"><i class="fa fa-share"></i> Reply</button>
+                              placeholder="Votre message.."></textarea>
+                    <button class="btn btn-effect-ripple btn-primary"><i class="fa fa-share"></i> Réponse</button>
                 </form>
                 <!-- END Quick Reply Form -->
             </div>
@@ -499,14 +172,13 @@
 
 
 
-
     <!-- Compose Modal -->
     <div id="modal-compose" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3 class="modal-title"><strong>Compose Message</strong></h3>
+                    <h3 class="modal-title"><strong>Nouveau message</strong></h3>
                 </div>
                 <div class="modal-body">
                     <form action="page_app_email.html" method="post" class="form-horizontal form-bordered"
@@ -514,7 +186,7 @@
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <select id="fcompose-users" name="fcompose-users" class="select-chosen"
-                                        data-placeholder="To.." style="width: 250px;" multiple="">
+                                        data-placeholder="À.." style="width: 250px;" multiple="">
                                     <option></option>
                                     <!-- Required for data-placeholder attribute to work with Chosen plugin -->
                                     <option value="john.doe">John Taylor</option>
@@ -533,12 +205,12 @@
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <textarea id="fcompose-message" name="fcompose-message" rows="7" class="form-control"
-                                          placeholder="Write your message.."></textarea>
+                                          placeholder="Rédigez votre message.."></textarea>
                             </div>
                         </div>
                         <div class="form-group form-actions">
                             <div class="col-xs-12 text-right">
-                                <button type="submit" class="btn btn-effect-ripple btn-primary">Send</button>
+                                <button type="submit" class="btn btn-effect-ripple btn-primary">Envoyer</button>
                             </div>
                         </div>
                     </form>
@@ -546,6 +218,14 @@
             </div>
         </div>
     </div>
+
     <!-- END Compose Modal -->
 
+@endsection
+
+@section('scripts')
+    <script src="{{asset('js/pages/appEmail.js')}}"></script>
+    <script>$(function () {
+            AppEmail.init();
+        });</script>
 @endsection

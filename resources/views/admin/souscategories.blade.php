@@ -55,7 +55,7 @@
                             <td><strong>{{$sousCategorie->sous_categorie_fr}}</strong></td>
                             <td><strong>{{$sousCategorie->year}}</strong></td>
                             <td><strong>{{$sousCategorie->director}}</strong></td>
-                            <td><strong>{{$sousCategorie->category->categorie}}</strong></td>
+                            <td><strong>{{$sousCategorie->category->name_categorie_fr}}</strong></td>
                             <td class="text-center">
                                 <a href="{{ route('sousCategories.edit', $sousCategorie->id) }}" data-toggle="tooltip"
                                    title="Edit"

@@ -24,6 +24,7 @@ class CreateSouscategoriesTable extends Migration
             $table->string('year')->nullable();
             $table->string('youtubelink')->nullable();
             $table->string('episode')->nullable();
+            $table->string('img_sous_category');
             $table->string('season')->nullable();
             $table->string('client')->nullable();
             $table->string('client_ar')->nullable();

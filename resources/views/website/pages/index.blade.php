@@ -112,7 +112,8 @@
                                     </div>
                                     <div class="skill_bar">
                                         <div class="bar_inner">
-                                            <div class="bar progress_line" data-width="88"></div>
+                                            <div class="bar progress_line" data-width="88">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -29,7 +29,7 @@ class SousCategoriesAdminController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name_categorie' => 'required|min:1',
+            'id_categorie' => 'required|numeric',
             'sous_categorie_fr' => 'required|min:3|max:100',
             'sous_categorie_en' => 'required|min:3|max:100',
             'sous_categorie_ar' => 'required|min:3|max:100',
@@ -55,10 +55,16 @@ class SousCategoriesAdminController extends Controller
             'agency_ar' => 'min:3|max:100|nullable',
             'project_fr' => 'min:3|max:100|nullable',
             'project_ar' => 'min:3|max:100|nullable',
+            'img_sous_category' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+
         ]);
 
+        if ($request->hasFile('img_sous_category')) {
+            $imageName = time() . '.' . $request->img_sous_category->getClientOriginalExtension();
+            $request->img_sous_category->move(public_path('images/sous_category'), $imageName);
+        }
         $data = new SousCategoriesAdmin();
-        $data->id_categorie = $request->name_categorie;
+        $data->id_categorie = $request->id_categorie;
         $data->sous_categorie_fr = $request->sous_categorie_fr;
         $data->sous_categorie_en = $request->sous_categorie_en;
         $data->sous_categorie_ar = $request->sous_categorie_ar;
@@ -84,6 +90,7 @@ class SousCategoriesAdminController extends Controller
         $data->agency_ar = $request->agency_ar;
         $data->project_fr = $request->project_fr;
         $data->project_ar = $request->project_ar;
+        $data->img_sous_category = $request->hasFile('img_sous_category') ? $imageName : $data->img_sous_category;
         $data->save();
 
         return redirect('/souscategories')->with('success',
@@ -107,7 +114,7 @@ class SousCategoriesAdminController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name_categorie' => 'required|min:1',
+            'id_categorie' => 'required|numeric',
             'sous_categorie_fr' => 'required|min:3|max:100',
             'sous_categorie_en' => 'required|min:3|max:100',
             'sous_categorie_ar' => 'required|min:3|max:100',
@@ -133,10 +140,16 @@ class SousCategoriesAdminController extends Controller
             'agency_ar' => 'min:3|max:1000|nullable',
             'project_fr' => 'min:3|max:1000|nullable',
             'project_ar' => 'min:3|max:1000|nullable',
+            'img_sous_category' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
+        if ($request->hasFile('img_sous_category')) {
+            $imageName = time() . '.' . $request->img_sous_category->getClientOriginalExtension();
+            $request->img_sous_category->move(public_path('images/sous_category'), $imageName);
+        }
         $data = SousCategoriesAdmin::find($id);
-        $data->id_categorie = $request->name_categorie;
+        $data->img_sous_category = $request->hasFile('img_sous_category') ? $imageName : $data->img_sous_category;
+        $data->id_categorie = $request->id_categorie;
         $data->sous_categorie_fr = $request->sous_categorie_fr;
         $data->sous_categorie_en = $request->sous_categorie_en;
         $data->sous_categorie_ar = $request->sous_categorie_ar;

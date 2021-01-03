@@ -26,7 +26,7 @@
             <h2>Créer un nouveau Sous Categorie</h2>
         </div>
         <form action="{{route('sousCategories.store')}}" method="POST"
-              class="form-horizontal form-bordered">
+              class="form-horizontal form-bordered" enctype="multipart/form-data">
 
             @method('POST')
             @csrf
@@ -42,19 +42,21 @@
                 <label class="col-md-3 control-label" for="example-chosen">Catégorie<span
                         class="text-danger"> *</span></label>
                 <div class="col-md-5">
-                    <select id="example-chosen" name="name_categorie" class="select-chosen"
-                            data-placeholder="Choisissez une catégorie.." style="width: 250px;" required>
+                    <select id="example-chosen" name="id_categorie" class="select-chosen"
+                            data-placeholder="Choisissez une catégorie.." style="width: 250px;">
                         <option></option><!-- Required for data-placeholder attribute to work with Chosen plugin -->
                         @foreach ($categoriesAdmin as $categoriesAdmins)
                             <option
-                                value={{$categoriesAdmins->id}}>
-                                {{$categoriesAdmins->categorie}}</option>
+                                value="{{$categoriesAdmins->id}}">
+                                {{$categoriesAdmins->name_categorie_fr}}
+                            </option>
                         @endforeach
-
                     </select>
                 </div>
+                @error('name_categorie')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
-
             <div class="form-group">
                 <label class="col-md-3 control-label" for="val-username">Nom Sous Categorie Fr<span
                         class="text-danger"> *</span></label>
@@ -146,11 +148,21 @@
                     @enderror
                 </div>
             </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label" for="example-file-input">Image pour votre vedio<span
+                        class="text-danger">*</span></label></label>
+                <div class="col-md-9">
+                    <input type="file" name="img_sous_category">
+                    @error('img_sous_category')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
             <div class="alert alert-warning col-md control-label center-block" role="alert"
                  style="-webkit-border-radius: 999px;border-left: 500px">
                 <h4 class="alert-heading text-center"><br>
                     <Strong>Ces champs sont optinel à remplir</Strong>
-                    </h4>
+                </h4>
             </div>
             <div class="form-group">
                 <label class="col-md-3 control-label" for="val-username">Épisode</label>
@@ -350,7 +362,6 @@
                     @enderror
                 </div>
             </div>
-
             <div class="form-group form-actions">
                 <div class="col-md-8 col-md-offset-3">
                     <input type="reset" class="btn btn-sm btn-warning" id="back3" value="Remettre"
