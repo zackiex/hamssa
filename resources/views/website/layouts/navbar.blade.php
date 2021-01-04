@@ -1,9 +1,7 @@
 <!--====== HEADER PART START ======-->
 @php
     $cat = \App\CategoriesAdmin::all();
-
 @endphp
-
 <section class="header_area" id="index">
     <div class="header_navbar">
         <div class="container">
@@ -26,24 +24,27 @@
                              id="navbarSupportedContent">
                             <ul id="nav" class="navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a href="#index">@lang("words.home")</a>
+                                    <a href="{{route('index')}}">@lang("words.home")</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#service">@lang("words.services")</a>
+                                    <a href="{{route('index')}}#service">@lang("words.services")</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#about">@lang("words.about")</a>
+                                    <a href="{{route('index')}}#about">@lang("words.about")</a>
                                 </li>
                                 <li class="dropdown nav-item">
-                                    <a href="contact.html">@lang("words.categories")</a>
+                                    <a href="#">@lang("words.categories")</a>
                                     <div class="dropdown-content">
                                         @foreach ($cat as $category)
                                             @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                                <a href="{{ route('category.edit', $category->id) }}">{{$category->name_categorie_ar}}</a>
+                                                <a href="{{ route('category.show', $category->id) }}">
+                                                    {{$category->name_categorie_ar}}</a>
                                             @elseif(LaravelLocalization::getCurrentLocale() == 'en')
-                                                <a href="{{ route('category.edit', $category->id) }}">{{$category->name_categorie_en}}</a>
+                                                <a href="{{ route('category.show', $category->id) }}">
+                                                    {{$category->name_categorie_en}}</a>
                                             @else
-                                                <a href="{{ route('category.edit', $category->id) }}">{{$category->name_categorie_fr}}</a>
+                                                <a href="{{ route('category.show', $category->id) }}">
+                                                    {{$category->name_categorie_fr}}</a>
                                             @endif
                                         @endforeach
                                     </div>
@@ -105,7 +106,6 @@
             </div>
         </div>
     </div>
-
 
 
 </section>

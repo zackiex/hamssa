@@ -13,7 +13,7 @@ class SousCategoriesAdminController extends Controller
     {
 
         $sousCategories = SousCategoriesAdmin::with('category')->latest()->get();
-        return view('admin.souscategories', compact('sousCategories'));
+        return view('admin.sousCategories', compact('sousCategories'));
     }
 
 
@@ -93,9 +93,8 @@ class SousCategoriesAdminController extends Controller
         $data->img_sous_category = $request->hasFile('img_sous_category') ? $imageName : $data->img_sous_category;
         $data->save();
 
-        return redirect('/souscategories')->with('success',
+        return redirect('/sousCategories')->with('success',
             'Les données sont enregistrées avec succès');
-
     }
 
     public function show(SousCategoriesAdmin $sousCategoriesAdmin)
@@ -176,7 +175,7 @@ class SousCategoriesAdminController extends Controller
         $data->project_fr = $request->project_fr;
         $data->project_ar = $request->project_ar;
         $data->save();
-        return redirect('/souscategories')->with('success', 'Les données sont enregistrées avec succès');
+        return redirect('/sousCategories')->with('success', 'Les données sont enregistrées avec succès');
 
     }
 
@@ -184,7 +183,7 @@ class SousCategoriesAdminController extends Controller
     {
         $data = SousCategoriesAdmin::find($id);
         $data->delete();
-        return redirect('/souscategories')->with('success', 'Les données sont supprimées avec succès');
+        return redirect('/sousCategories')->with('success', 'Les données sont supprimées avec succès');
 
     }
 }

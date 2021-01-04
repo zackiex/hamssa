@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
 Auth::routes(['verify' => false, 'register' => true]);
 
 Route::middleware(['auth'])->group(function () {
@@ -30,9 +29,10 @@ Route::group(
     [
         'namespace' => 'WebSite',
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-    ], function(){
-     Route::get('/', 'IndexController@index');
-     Route::resource('/category', 'CategoryController');
-     Route::resource('/vedioshow', 'VedioshowController');
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+    ], function () {
+    Route::get('/', 'IndexController@index')->name('index');
+    Route::get('category/{id}', 'CategoryController@show')->name('category.show');
+
+    Route::get('vedioshow/{id}', 'VedioshowController@show_vedio')->name('vedio.show');
 });

@@ -3,11 +3,7 @@
 @section('title','Category')
 
 @section('content')
-
-    @php
-        $souscategories = \App\SousCategoriesAdmin::all();
-    @endphp
-    <!--====== SERVICES PART START ======-->
+    <!--====== SERVICES PART START ======-->h
     @if (session('success'))
         <div class="alert alert-success alert-dismissible " role="alert">
             <strong>{{ session('success') }}</strong>
@@ -25,17 +21,7 @@
                         <h4 class="title">@lang("words.categories")</h4>
                         <ul class="breadcrumb justify-content-center">
                             <li><a href="index.html">@lang("words.home")</a></li>
-                            <li>
-                                @foreach ($souscategories as $category)
-                                    @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                        {{$category->category->name_categorie_ar}}
-                                    @elseif(LaravelLocalization::getCurrentLocale() == 'en')
-                                        {{$category->category->name_categorie_en}}
-                                    @else
-                                        {{$category->category->name_categorie_fr}}
-                                    @endif
-                                @endforeach
-                            </li>
+                            <li>{{$category_name}}</li>
                         </ul>
                     </div>
                 </div>
@@ -59,19 +45,19 @@
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
                     <div class="single_gallery">
-                        <a href="{{ route('vedioshow.edit', $category->id) }}">
-                        <img src="{{asset('assets/images/1.jpg')}}" alt="gallery">
-                        <p>
-                            @foreach ($souscategories as $category)
-                                @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                    {{$category->sous_categorie_ar}}
-                                @elseif(LaravelLocalization::getCurrentLocale() == 'en')
-                                    {{$category->sous_categorie_en}}
-                                @else
-                                    {{$category->sous_categorie_fr}}
-                                @endif
-                            @endforeach
-                        </p>
+                        @foreach ($vedios as $vedio)
+                            <a href="{{ route('vedio.show', $vedio->id) }}">
+                                <img src="{{asset('assets/images/1.jpg')}}" alt="gallery">
+                           <p>
+                               @if(LaravelLocalization::getCurrentLocale() == 'ar')
+                                   {{$vedio->sous_categorie_ar}}
+                               @elseif(LaravelLocalization::getCurrentLocale() == 'en')
+                                   {{$vedio->sous_categorie_en}}
+                               @else
+                                   {{$vedio->sous_categorie_fr}}
+                               @endif
+                           </p>
+                        @endforeach
                     </div>
                 </div>
             </div>

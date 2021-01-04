@@ -1,34 +1,12 @@
 @extends('website.layouts.master')
-
-@section('title','Category')
-
+@section('title','Vedio')
 @section('content')
-
-    @php
-        $souscategories = \App\SousCategoriesAdmin::all();
-    @endphp
-    <!--====== SERVICES PART START ======-->
-
     <div class="page_banner bg_cover" style="background-image: url({{asset('assets/images/client_bg.jpg')}})">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="banner_content text-center">
                         <h4 class="title">@lang("words.gallery")</h4>
-                        <ul class="breadcrumb justify-content-center">
-                            <li><a href="index.html">@lang("words.home")</a></li>
-                            <li>
-                                @foreach ($souscategories as $category)
-                                    @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                        {{$category->category->name_categorie_ar}}
-                                    @elseif(LaravelLocalization::getCurrentLocale() == 'en')
-                                        {{$category->category->name_categorie_en}}
-                                    @else
-                                        {{$category->category->name_categorie_fr}}
-                                    @endif
-                                @endforeach
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -36,7 +14,6 @@
     </div>
 
     <!--====== GALLERY PART START ======-->
-
     <section class="gallery_area pt-110 pb-120">
         <div class="container">
             <div class="row justify-content-center">
@@ -49,11 +26,8 @@
             <div class="container">
                 <div class="row">
                     <div class="embed-responsive embed-responsive-16by9 col-sm-9">
-                        <iframe class="embed-responsive-item"
-                                src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
-                                allowfullscreen></iframe>
+                        <iframe style="width: 100%" height="345" src="https://www.youtube.com/embed/AJZ5zVtw2Hg"></iframe>
                     </div>
-
                     <div id="videoinfos" class="col-md-3">
                         <div class="font-weight-bold text-justify">
                             <h3>@lang("words.description")</h3>
@@ -172,6 +146,7 @@
 
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>

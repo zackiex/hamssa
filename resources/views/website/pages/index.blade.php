@@ -220,7 +220,7 @@
                 </div>
             </div> <!-- row -->
 
-            <form id="contact-form" action="{{route('email.store')}}" method="POST"
+            <form  action="{{route('email.store')}}" method="POST"
                   class="wow fadeInUpBig" enctype="multipart/form-data"
                   data-wow-duration="1.3s" data-wow-delay="0.5s">
                 @method('POST')
