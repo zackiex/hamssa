@@ -8,42 +8,58 @@
     <div class="container">
         <div class="footer_widget pt-120 pb-120">
             <div class="footer_content text-center">
-                <a href="javscript:void(0)" class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
+                <a href="javscri3t:void(0)" class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
                     <img src="assets/images/logo-2.svg" alt="logo">
                 </a>
                 <span class="mail wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">{{$about->email}}</span>
                 <ul class="footer_menu wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
                     <li>
                         @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                            <a>@lang("words.adress")</a><br>
+                            <img src="{{asset('assets/images/icons/maps.png')}}" style="height: 30px;width: 30px">
+                            <br>
+                            <br>
                             <a>{{$about->adresse_ar}}</a>
                         @else
-                            <a>@lang("words.adress")</a><br>
+                            <img src="{{asset('assets/images/icons/maps.png')}}" style="height: 30px;width: 30px">
+                            <br>
+                            <br>
                             <a>{{$about->adresse}}</a>
                         @endif
                     </li>
                     <li>
                         @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                            <a>@lang("words.temps")</a><br>
+                            <img src="{{asset('assets/images/icons/time.png')}}" style="height: 30px;width: 30px">
+                            <br>
+                            <br>
                             <a>{{$about->tempstravail_ar}}</a>
                         @elseif(LaravelLocalization::getCurrentLocale() == 'en')
-                            <a>@lang("words.temps")</a><br>
+                            <img src="{{asset('assets/images/icons/time.png')}}" style="height: 30px;width: 30px">
+                            <br>
+                            <br>
                             <a>{{$about->tempstravail_en}}</a>
                         @else
-                            <a>@lang("words.temps")</a><br>
+                            <img src="{{asset('assets/images/icons/time.png')}}" style="height: 30px;width: 30px">
+                            <br>
+                            <br>
                             <a>{{$about->tempstravail_fr}}</a>
                         @endif
                     </li>
                     <li>
-                        <a>@lang("words.tel")</a><br>
+                        <img src="{{asset('assets/images/icons/phone.png')}}" style="height: 30px;width: 30px">
+                            <br>
+                            <br>
                         <a>{{$about->telephone}}</a>
                     </li>
                     <li>
-                        <a>@lang("words.telfix")</a><br>
+                        <img src="{{asset('assets/images/icons/fixe.png')}}" style="height: 30px;width: 30px">
+                            <br>
+                            <br>
                         <a>{{$about->telephonefixe}}</a>
                     </li>
                     <li>
-                        <a>@lang("words.fax")</a><br>
+                       <img src="{{asset('assets/images/icons/fax.png')}}" style="height: 30px;width: 30px">
+                            <br>
+                            <br>
                         <a>{{$about->fax}}</a>
                     </li>
 

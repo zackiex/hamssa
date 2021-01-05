@@ -50,10 +50,10 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#contact">@lang("words.contact")</a>
+                                    <a href="{{route('index')}}#contact">@lang("words.contact")</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#maps">@lang("words.maps")</a>
+                                    <a href="{{route('index')}}#maps">@lang("words.maps")</a>
                                 </li>
                             </ul>
                         </div>

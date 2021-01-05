@@ -33,113 +33,113 @@
                             <h3>@lang("words.description")</h3>
                             <br>
                             <div><span style="color:#FF6464;">@lang("words.title") / </span>
-                                @foreach ($souscategories as $sous_category)
+
                                     @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                        {{$sous_category->sous_categorie_ar}}
+                                        {{$vedio->sous_categorie_ar}}
                                     @elseif(LaravelLocalization::getCurrentLocale() == 'en')
-                                        {{$sous_category->sous_categorie_en}}
+                                        {{$vedio->sous_categorie_en}}
                                     @else
-                                        {{$sous_category->sous_categorie_fr}}
+                                        {{$vedio->sous_categorie_fr}}
                                     @endif
-                                @endforeach
+
                             </div>
                             <div><span style="color:#FF6464;">@lang("words.director") / </span>
-                                @foreach ($souscategories as $sous_category)
+
                                     @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                        {{$sous_category->director_ar}}
+                                        {{$vedio->director_ar}}
                                     @else
-                                        {{$sous_category->director}}
+                                        {{$vedio->director}}
                                     @endif
-                                @endforeach
+
                             </div>
 
                             <div><span style="color:#FF6464;">@lang("words.year") / </span>
-                                {{$sous_category->year}}
+                                {{$vedio->year}}
                             </div>
 
-                            @if(!empty($sous_category->episode))
+                            @if(!empty($vedio->episode))
                                 <div><span style="color:#FF6464;">@lang("words.episode") / </span>
-                                    {{$sous_category->episode}}
+                                    {{$vedio->episode}}
                                 </div>
                             @endif
 
-                            @if(!empty($sous_category->season))
+                            @if(!empty($vedio->season))
                                 <div><span style="color:#FF6464;">@lang("words.season") / </span>
-                                    {{$sous_category->season}}
+                                    {{$vedio->season}}
                                 </div>
                             @endif
 
-                            @if(!empty($sous_category->client))
+                            @if(!empty($vedio->client))
                                 <div><span style="color:#FF6464;">@lang("words.client") / </span>
                                     @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                        {{$sous_category->client_ar}}
+                                        {{$vedio->client_ar}}
                                     @else
-                                        {{$sous_category->client}}
+                                        {{$vedio->client}}
                                     @endif
                                 </div>
                             @endif
 
-                            @if(!empty($sous_category->production))
+                            @if(!empty($vedio->production))
                                 <div><span style="color:#FF6464;">@lang("words.production") / </span>
                                     @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                        {{$sous_category->production_ar}}
+                                        {{$vedio->production_ar}}
                                     @else
-                                        {{$sous_category->production}}
+                                        {{$vedio->production}}
                                     @endif
                                 </div>
                             @endif
 
-                            @if(!empty($sous_category->production_executif))
+                            @if(!empty($vedio->production_executif))
                                 <div><span style="color:#FF6464;">@lang("words.production_executif") / </span>
                                     @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                        {{$sous_category->production_executif_ar}}
+                                        {{$vedio->production_executif_ar}}
                                     @else
-                                        {{$sous_category->production_executif}}
+                                        {{$vedio->production_executif}}
                                     @endif
                                 </div>
                             @endif
 
-                            @if(!empty($sous_category->synopsis_fr))
+                            @if(!empty($vedio->synopsis_fr))
                                 <div><span style="color:#FF6464;">@lang("words.synopsis") / </span>
                                     @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                        {{$sous_category->synopsis_ar}}
+                                        {{$vedio->synopsis_ar}}
                                     @elseif(LaravelLocalization::getCurrentLocale() == 'en')
-                                        {{$sous_category->synopsis_en}}
+                                        {{$vedio->synopsis_en}}
                                     @else
-                                        {{$sous_category->synopsis_fr}}
+                                        {{$vedio->synopsis_fr}}
                                     @endif
                                 </div>
                             @endif
 
-                            @if(!empty($sous_category->scenario_fr))
+                            @if(!empty($vedio->scenario_fr))
                                 <div><span style="color:#FF6464;">@lang("words.scenario") / </span>
                                     @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                        {{$sous_category->scenario_ar}}
+                                        {{$vedio->scenario_ar}}
                                     @elseif(LaravelLocalization::getCurrentLocale() == 'en')
-                                        {{$sous_category->scenario_en}}
+                                        {{$vedio->scenario_en}}
                                     @else
-                                        {{$sous_category->scenario_fr}}
+                                        {{$vedio->scenario_fr}}
                                     @endif
                                 </div>
                             @endif
 
-                            @if(!empty($sous_category->agency_fr))
+                            @if(!empty($vedio->agency_fr))
                                 <div><span style="color:#FF6464;">@lang("words.agency") / </span>
                                     @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                        {{$sous_category->agency_ar}}
+                                        {{$vedio->agency_ar}}
                                     @else
-                                        {{$sous_category->agency_fr}}
+                                        {{$vedio->agency_fr}}
                                     @endif
                                 </div>
                             @endif
 
-                            @if(!empty($sous_category->project_fr))
+                            @if(!empty($vedio->project_fr))
                                 <div><span style="color:#FF6464;">@lang("words.project") / </span>
 
                                     @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                        {{$sous_category->project_ar}}
+                                        {{$vedio->project_ar}}
                                     @else
-                                        {{$sous_category->project_fr}}
+                                        {{$vedio->project_fr}}
                                     @endif
                                 </div>
                             @endif

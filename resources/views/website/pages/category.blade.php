@@ -47,7 +47,7 @@
                     <div class="single_gallery">
                         @foreach ($vedios as $vedio)
                             <a href="{{ route('vedio.show', $vedio->id) }}">
-                                <img src="{{asset('assets/images/1.jpg')}}" alt="gallery">
+                                <img src="{{asset('images/sous_category/'.$vedio->img_sous_category)}}" alt="gallery">
                            <p>
                                @if(LaravelLocalization::getCurrentLocale() == 'ar')
                                    {{$vedio->sous_categorie_ar}}
