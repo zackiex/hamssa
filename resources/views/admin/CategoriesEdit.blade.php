@@ -38,7 +38,7 @@
                         <label class="col-md-3 control-label" for="val-username">عنوان الفئة<span
                                 class="text-danger">*</span></label>
                         <div class="col-md-6">
-                            <input value="{{old('name_categorie_ar')}}" name="name_categorie_ar" type="text"
+                            <input value="{{$data->name_categorie_ar}}" name="name_categorie_ar" type="text"
                                    placeholder="Vous devez saisir un titre ici.."
                                    class=" form-control @error('name_categorie_ar') is-invalid @enderror">
                             @error('name_categorie_ar')
@@ -50,7 +50,7 @@
                         <label class="col-md-3 control-label" for="val-username">Titre Categorie<span
                                 class="text-danger">*</span></label>
                         <div class="col-md-6">
-                            <input value="{{old('name_categorie_fr')}}" name="name_categorie_fr" type="text"
+                            <input value="{{$data->name_categorie_fr}}" name="name_categorie_fr" type="text"
                                    placeholder="Vous devez saisir un titre ici.."
                                    class=" form-control @error('name_categorie_fr') is-invalid @enderror">
                             @error('name_categorie_fr')
@@ -62,7 +62,7 @@
                         <label class="col-md-3 control-label" for="val-username">Titre Categorie EN<span
                                 class="text-danger">*</span></label>
                         <div class="col-md-6">
-                            <input value="{{old('name_categorie_en')}}" name="name_categorie_en" type="text"
+                            <input value="{{$data->name_categorie_en}}" name="name_categorie_en" type="text"
                                    placeholder="Vous devez saisir un titre ici.."
                                    class=" form-control @error('name_categorie_en') is-invalid @enderror">
                             @error('name_categorie_en')

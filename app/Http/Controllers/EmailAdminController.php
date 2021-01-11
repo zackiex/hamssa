@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\email;
 use App\EmailAdmin;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class EmailAdminController extends Controller
      */
     public function index()
     {
-        return view('admin.email');
+        $email = Email::all();
+        return view('admin.email',compact('email'));
     }
 
     /**

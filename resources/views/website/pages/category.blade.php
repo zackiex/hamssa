@@ -4,14 +4,7 @@
 
 @section('content')
     <!--====== SERVICES PART START ======-->h
-    @if (session('success'))
-        <div class="alert alert-success alert-dismissible " role="alert">
-            <strong>{{ session('success') }}</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-    @endif
+
 
     <div class="page_banner bg_cover" style="background-image: url({{asset('assets/images/client_bg.jpg')}})">
         <div class="container">
@@ -43,23 +36,25 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-3 col-sm-6">
-                    <div class="single_gallery">
-                        @foreach ($vedios as $vedio)
+                @foreach ($vedios as $vedio)
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single_gallery">
                             <a href="{{ route('vedio.show', $vedio->id) }}">
                                 <img src="{{asset('images/sous_category/'.$vedio->img_sous_category)}}" alt="gallery">
-                           <p>
-                               @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                   {{$vedio->sous_categorie_ar}}
-                               @elseif(LaravelLocalization::getCurrentLocale() == 'en')
-                                   {{$vedio->sous_categorie_en}}
-                               @else
-                                   {{$vedio->sous_categorie_fr}}
-                               @endif
-                           </p>
-                        @endforeach
+                                <p>
+                                    @if(LaravelLocalization::getCurrentLocale() == 'ar')
+                                        {{$vedio->sous_categorie_ar}}
+                                    @elseif(LaravelLocalization::getCurrentLocale() == 'en')
+                                        {{$vedio->sous_categorie_en}}
+                                    @else
+                                        {{$vedio->sous_categorie_fr}}
+                                    @endif
+                                </p>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>

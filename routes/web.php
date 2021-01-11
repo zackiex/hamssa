@@ -32,6 +32,7 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ], function () {
     Route::get('/', 'IndexController@index')->name('index');
+    Route::post('/', 'IndexController@store')->name('index.store');
     Route::get('category/{id}', 'CategoryController@show')->name('category.show');
 
     Route::get('vedioshow/{id}', 'VedioshowController@show_vedio')->name('vedio.show');

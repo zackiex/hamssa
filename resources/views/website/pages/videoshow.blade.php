@@ -26,7 +26,7 @@
             <div class="container">
                 <div class="row">
                     <div class="embed-responsive embed-responsive-16by9 col-sm-9">
-                        <iframe style="width: 100%" height="345" src="https://www.youtube.com/embed/AJZ5zVtw2Hg"></iframe>
+                        <iframe style="width: 100%" height="345" src= {{$vedio->youtubelink}}></iframe>
                     </div>
                     <div id="videoinfos" class="col-md-3">
                         <div class="font-weight-bold text-justify">

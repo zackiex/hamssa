@@ -9,7 +9,7 @@
                 <div class="col-lg-12">
                     <nav class="navbar navbar-expand-lg">
                         <a class="navbar-brand">
-                            <img src="assets/images/logo.svg" alt="Logo">
+                            <img src="{{asset('assets/images/logo_png.png')}}" alt="Logo">
                         </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent"

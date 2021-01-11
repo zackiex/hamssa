@@ -62,25 +62,29 @@
                     <table class="table table-borderless table-striped table-vcenter remove-margin">
                         <tbody>
                         <!-- Use the first row as a prototype for your column widths -->
-                        <tr>
-                            <td class="td-label td-label-muted text-center" style="width: 5%;">
-                                <label class="csscheckbox csscheckbox-primary"><input
-                                        type="checkbox"><span></span></label>
-                            </td>
-                            <td class="text-center" style="width: 7%;">
-                                <img src="img/placeholders/avatars/avatar7.jpg" alt="avatar" class="img-circle">
-                            </td>
-                            <td>
-                                <h4>
-                                    <a href="javascript:void(0)" class="text-dark"><strong>Product updates</strong></a>
-                                </h4>
-                                <span class="text-muted">This is the preview text of this message..</span>
-                            </td>
-                            <td class="hidden-xs text-center" style="width: 30px;">
-                                <i class="fa fa-paperclip fa-2x text-muted"></i>
-                            </td>
-                            <td class="hidden-xs text-right text-muted" style="width: 120px;"><em>just now</em></td>
-                        </tr>
+                        @foreach ($email as $emails)
+                            <tr>
+                                <td class="td-label td-label-muted text-center" style="width: 5%;">
+                                    <label class="csscheckbox csscheckbox-primary"><input
+                                            type="checkbox"><span></span></label>
+                                </td>
+                                <td class="text-center" style="width: 7%;">
+                                    <img src="img/placeholders/avatars/avatar7.jpg" alt="avatar" class="img-circle">
+                                </td>
+                                <td>
+                                    <h4>
+                                        <a href="javascript:void(0)"
+                                           class="text-dark"><strong>{{$emails->subject}}</strong></a>
+                                    </h4>
+                                    <span class="text-muted">{{$emails->name}}</span>
+                                </td>
+                                <td class="hidden-xs text-center" style="width: 30px;">
+                                    <i class="fa fa-paperclip fa-2x text-muted"></i>
+                                </td>
+                                <td class="hidden-xs text-right text-muted" style="width: 120px;"><em>
+                                        {{\Carbon\Carbon::parse($emails->created_at)->format('d/m/Y,H:i')}}</em></td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -106,55 +110,19 @@
                 <!-- END Title -->
 
                 <!-- Header -->
-                <h3><strong>Project updates </strong> <small><em>1 week ago</em></small></h3>
-                <p><a href="javascript:void(0)"><strong>John Doe</strong></a>
-                    <strong>&lt;john.doe@example.com&gt;</strong> to <a href="javascript:void(0)"><strong>Admin</strong></a>
-                    <strong>&lt;admin@example.com&gt;</strong></p>
+                <h3><strong>{{$emails->subject}} </strong> <small><em>
+                            {{\Carbon\Carbon::parse($emails->created_at)->format('d/m/Y,H:i')}}</em></small></h3>
+                <p><a href="javascript:void(0)"><strong>{{$emails->name}}</strong></a>
+                    <strong>&lt;{{$emails->email}}&gt;</strong> to <a
+                        href="javascript:void(0)"><strong>Admin</strong></a>
+                    <strong>&lt;contact@hamssa.dz&gt;</strong></p>
                 <!-- END Header -->
 
                 <!-- Message Body -->
                 <hr>
-                <p>Hi,</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet
-                    gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt
-                    turpis in porta. Integer fermentum tincidunt auctor. Vestibulum ullamcorper, odio sed rhoncus
-                    imperdiet, enim elit sollicitudin orci, eget dictum leo mi nec lectus. Nam commodo turpis id lectus
-                    scelerisque vulputate. Integer sed dolor erat. Fusce erat ipsum, varius vel euismod sed, tristique
-                    et lectus? Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida
-                    sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque? Proin
-                    rhoncus dui at ligula vestibulum ut facilisis ante sodales! Suspendisse potenti. Aliquam tincidunt
-                    sollicitudin sem nec ultrices. Sed at mi velit. Ut egestas tempor est, in cursus enim venenatis
-                    eget! Nulla quis ligula ipsum. Donec vitae ultrices dolor?</p>
-                <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum
-                    lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula
-                    elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla
-                    hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem
-                    ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet
-                    gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt
-                    turpis in porta. Integer fermentum tincidunt auctor. Vestibulum ullamcorper, odio sed rhoncus
-                    imperdiet, enim elit sollicitudin orci, eget dictum leo mi nec lectus. Nam commodo turpis id lectus
-                    scelerisque vulputate. Integer sed dolor erat. Fusce erat ipsum, varius vel euismod sed, tristique
-                    et lectus? Etiam egestas fringilla enim, id convallis lectus laoreet at. Fusce purus nisi, gravida
-                    sed consectetur ut, interdum quis nisi. Quisque egestas nisl id lectus facilisis scelerisque? Proin
-                    rhoncus dui at ligula vestibulum ut facilisis ante sodales! Suspendisse potenti. Aliquam tincidunt
-                    sollicitudin sem nec ultrices. Sed at mi velit. Ut egestas tempor est, in cursus enim venenatis
-                    eget! Nulla quis ligula ipsum. Donec vitae ultrices dolor?</p>
-                <p>Best Regards,</p>
-                <p>John</p>
+                <p>{{$emails->message}}</p>
                 <hr>
                 <!-- END Message Body -->
-
-                <!-- Attachments Row -->
-                <div class="row block-section">
-                    <div class="col-xs-6 col-sm-3 col-lg-2 text-center">
-                        <a href="img/placeholders/photos/photo2.jpg" data-toggle="lightbox-image">
-                            <img src="img/placeholders/photos/photo2.jpg" alt="photo" class="img-responsive push-bit">
-                        </a>
-                        <span class="text-muted">IMG0001.JPG</span>
-                    </div>
-                </div>
-                <!-- END Attachments Row -->
 
                 <!-- Quick Reply Form -->
                 <form action="page_app_email.html" method="post" onsubmit="return false;">

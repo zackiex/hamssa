@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="{{asset('assets/images/favicon.png" type="image/png')}}">
+    <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}">
 
     <!--====== Magnific Popup CSS ======-->
     <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}">
@@ -26,7 +26,9 @@
     <link rel="stylesheet" href="{{asset('assets/css/LineIcons.2.0.css')}}">
 
     <!--====== Bootstrap CSS ======-->
+
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.4.5.2.min.css')}}">
+
 
     <!--====== Default CSS ======-->
     <link rel="stylesheet" href="{{asset('assets/css/default.css')}}">
@@ -45,7 +47,7 @@
 
 </head>
 
-<body>
+<body dir="{{(App::isLocale('ar') ? 'rtl' : 'ltr')}}">
 
 
 <div class="preloader">

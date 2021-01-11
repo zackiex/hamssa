@@ -26,7 +26,6 @@
             <h2>Créer un nouveau Sous Categorie</h2>
         </div>
 
-
         <div class="row">
             <div class="col-lg-6" style="margin-left: 25%;">
                 <div class="alert alert-info text-center" role="alert">
@@ -148,7 +147,7 @@
                         YouTube<span
                             class="text-danger">*</span></label>
                     <div class="col-md-9">
-                        <input value="{{old('youtube_link')}}" name="youtube_link" type="text"
+                        <input value="https://www.youtube.com/embed/" name="youtube_link" type="text"
                                placeholder="Vous devez saisir le lien de votre vidéo youtube.."
                                class=" form-control @error('youtube_link') is-invalid @enderror"
                                required>
@@ -176,7 +175,6 @@
                         @enderror
                     </div>
                 </div>
-
 
                 <div class="col-lg-6" style="margin-left: 25%;">
                     <div class="alert alert-warning text-center" role="alert">
@@ -419,5 +417,4 @@
             </div>
         </form>
     </div>
-
 @endsection

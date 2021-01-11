@@ -16,7 +16,7 @@ class CategoryController extends Controller
 
     public function show($id)
     {
-        $vedios = SousCategoriesAdmin::where('id', $id)->latest()->get();
+        $vedios = SousCategoriesAdmin::where('id_categorie', $id)->latest()->get();
         $category= CategoriesAdmin::find($id);
         $category_name = '';
         if(LaravelLocalization::getCurrentLocale() == 'ar'){

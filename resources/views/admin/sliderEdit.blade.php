@@ -38,7 +38,7 @@
                         <label class="col-md-3 control-label" for="val-username">Titre AR<span
                                 class="text-danger">*</span></label>
                         <div class="col-md-6">
-                            <input  value="{{old('title_ar')}}" name="title_ar" type="text" placeholder="Vous devez saisir un titre ici.."
+                            <input  value="{{$data->title_ar}}" name="title_ar" type="text" placeholder="Vous devez saisir un titre ici.."
                                     class=" form-control @error('title_ar') is-invalid @enderror">
                             @error('title_ar')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -49,7 +49,7 @@
                         <label class="col-md-3 control-label" for="val-username">Titre FR <span
                                 class="text-danger">*</span></label>
                         <div class="col-md-6">
-                            <input  value="{{old('title_fr')}}" name="title_fr" type="text" placeholder="Vous devez saisir un titre ici.."
+                            <input  value="{{$data->title_fr}}" name="title_fr" type="text" placeholder="Vous devez saisir un titre ici.."
                                     class=" form-control @error('title_fr') is-invalid @enderror">
                             @error('title_fr')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -60,7 +60,7 @@
                         <label class="col-md-3 control-label" for="val-username">Titre EN <span
                                 class="text-danger">*</span></label>
                         <div class="col-md-6">
-                            <input  value="{{old('title_en')}}" name="title_en" type="text" placeholder="Vous devez saisir un titre ici.."
+                            <input  value="{{$data->title_en}}" name="title_en" type="text" placeholder="Vous devez saisir un titre ici.."
                                     class=" form-control @error('title_en') is-invalid @enderror">
                             @error('title_en')
                             <div class="alert alert-danger">{{ $message }}</div>

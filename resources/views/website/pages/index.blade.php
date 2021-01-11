@@ -220,9 +220,8 @@
                 </div>
             </div> <!-- row -->
 
-            <form  action="{{route('email.store')}}" method="POST"
-                  class="wow fadeInUpBig" enctype="multipart/form-data"
-                  data-wow-duration="1.3s" data-wow-delay="0.5s">
+            <form action="{{route('index.store')}}" method="POST"
+                  class="wow fadeInUpBig" enctype="multipart/form-data">
                 @method('POST')
                 @csrf
                 <div class="row">
@@ -266,10 +265,11 @@
     <section class="map_area" id="maps">
         <div class="gmap_canvas">
             <iframe id="gmap_canvas"
-                    src="https://maps.google.com/maps?q=Mission%20District%2C%20San%20Francisco%2C%20CA%2C%20USA&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3851.5382011903853!2d4.750263182070393!3d36.071394003956264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sdz!4v1610370032363!5m2!1sen!2sdz"
                     frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         </div>
     </section>
+
     <!--====== MAP PART ENDS ======-->
 @endsection
 

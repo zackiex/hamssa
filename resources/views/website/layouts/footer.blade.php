@@ -9,7 +9,7 @@
         <div class="footer_widget pt-120 pb-120">
             <div class="footer_content text-center">
                 <a href="javscri3t:void(0)" class="wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
-                    <img src="assets/images/logo-2.svg" alt="logo">
+                    <img src="{{asset('assets/images/logopngf.png')}}" alt="logo">
                 </a>
                 <span class="mail wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">{{$about->email}}</span>
                 <ul class="footer_menu wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.8s">
@@ -48,19 +48,19 @@
                         <img src="{{asset('assets/images/icons/phone.png')}}" style="height: 30px;width: 30px">
                             <br>
                             <br>
-                        <a>{{$about->telephone}}</a>
+                        <a>(+213) {{$about->telephone}}</a>
                     </li>
                     <li>
                         <img src="{{asset('assets/images/icons/fixe.png')}}" style="height: 30px;width: 30px">
                             <br>
                             <br>
-                        <a>{{$about->telephonefixe}}</a>
+                        <a>(+213) {{$about->telephonefixe}}</a>
                     </li>
                     <li>
                        <img src="{{asset('assets/images/icons/fax.png')}}" style="height: 30px;width: 30px">
                             <br>
                             <br>
-                        <a>{{$about->fax}}</a>
+                        <a>(+213) {{$about->fax}}</a>
                     </li>
 
                 </ul>
