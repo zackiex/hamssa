@@ -70,7 +70,7 @@ class CategoriesAdminController extends Controller
             'name_categorie_en' => 'required|min:3|max:50|unique:categories_admins,name_categorie_en,' . $id,
 
         ]);
-        $data = new CategoriesAdmin();
+        $data = CategoriesAdmin::find($id);;
         $data->name_categorie_ar = $request->name_categorie_ar;
         $data->name_categorie_fr = $request->name_categorie_fr;
         $data->name_categorie_en = $request->name_categorie_en;

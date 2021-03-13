@@ -21,7 +21,8 @@ class CreateAboutsTable extends Migration
             $table->integer('telephone2')->nullable();
             $table->integer('fax')->nullable();
             $table->integer('telephonefixe')->nullable();
-            $table->string('Gèolocalisation')->nullable();
+            $table->float('gèolocalisation_lat');
+            $table->float('gèolocalisation_log');
             $table->string('tempstravail_fr');
             $table->string('tempstravail_en');
             $table->string('tempstravail_ar');

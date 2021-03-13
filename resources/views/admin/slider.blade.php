@@ -5,14 +5,14 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="header-section">
-                    <h1>Slider</h1>
+                    <h1> Slider </h1>
                 </div>
             </div>
             <div class="col-sm-6 hidden-xs">
                 <div class="header-section">
                     <div class="breadcrumb breadcrumb-top">
                         <a href="{{route('slider.create')}}" class="btn btn-primary">
-                            <i class="gi gi-plus"></i> New slider
+                            <i class="gi gi-plus"></i> Nouveau Slider
                         </a>
                     </div>
                 </div>
@@ -61,10 +61,10 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h2>Confirmation !</h2>
+                                    <h2> Confirmation ! </h2>
                                 </div>
                                 <div class="modal-body">
-                                    <h4>Etes-vous sûr de supprimer cette élement?</h4>
+                                    <h4> Etes-vous sûr de supprimer cette élement ? </h4>
                                     <div class="modal-footer">
                                         <form action="{{ route('slider.destroy', $sliderall->id) }}" method="POST">
                                             @csrf
@@ -74,7 +74,7 @@
                                             </button>
                                         </form>
                                         <button type="button" class="btn btn-default"
-                                                data-dismiss="modal">Annuler
+                                                data-dismiss="modal"> Annuler
                                         </button>
                                     </div>
                                 </div>

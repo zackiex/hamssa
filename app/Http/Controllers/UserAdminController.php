@@ -25,9 +25,9 @@ class UserAdminController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|min:3|max:191|unique:users',
-            'email' => 'email:rfc,dns|required|min:3|max:191|unique:users',
-            'password' => 'required|min:6|max:255',
+            'name' => 'required|min:3|max:50|unique:users',
+            'email' => 'email:rfc,dns|required|unique:users',
+            'password' => 'required|min:6|max:155',
             'confirm_password' => 'required|same:password',
         ]);
 
@@ -56,8 +56,8 @@ class UserAdminController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => 'required|min:3|max:191|unique:users,name,' . $id,
-            'email' => 'email:rfc,dns|required|min:3|max:191|unique:users,email,' . $id,
+            'name' => 'required|min:3|max:50|unique:users,name,' . $id,
+            'email' => 'email:rfc,dns|required|unique:users,email,' . $id,
             'password' => 'required|min:6|max:255',
             'confirm_password' => 'required|same:password',
         ]);

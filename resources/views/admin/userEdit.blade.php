@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('title','Paramètres utilisateur')
+@section('title','Paramètres des utilisateurs')
 @section('content')
     <div class="content-header">
         <div class="row">
             <div class="col-sm-6">
                 <div class="header-section">
-                    <h1>Gestion des utilisateurs</h1>
+                    <h1> Gestion des utilisateurs </h1>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
             <div class="block">
                 <!-- Form Validation Title -->
                 <div class="block-title">
-                    <h2>Mise à jour utilisateur</h2>
+                    <h2> Mise à jour des utilisateurs </h2>
                 </div>
                 <!-- END Form Validation Title -->
                 @if (session('success'))
@@ -53,16 +53,14 @@
                                 <ul class="nav nav-pills nav-justified">
                                     <li class="active disabled"><a href="javascript:void(0)"
                                                                    class="text-muted">
-                                            <i class="fa fa-user"></i> <strong>Compte</strong></a>
+                                            <i class="fa fa-user"></i> <strong> Compte </strong></a>
                                     </li>
-                                    <li class="disabled"><a href="javascript:void(0)"><i
-                                                class="fa fa-info-circle"></i> <strong>Info</strong></a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- END Step Info -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="example-validation-username">Nom
+                            <label class="col-md-4 control-label" for="example-validation-username"> Nom
                                 d'utilisateur
                                 <span
                                     class="text-danger">*</span></label>
@@ -78,13 +76,11 @@
                                     @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="gi gi-user"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="example-validation-email">Email
+                            <label class="col-md-4 control-label" for="example-validation-email"> Email
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -98,13 +94,11 @@
                                     @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <span class="input-group-addon"><i
-                                            class="gi gi-envelope"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="example-validation-password">Mot de
+                            <label class="col-md-4 control-label" for="example-validation-password"> Mot de
                                 passe
                                 <span
                                     class="text-danger">*</span></label>
@@ -118,14 +112,12 @@
                                     @error('password')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <span class="input-group-addon"><i
-                                            class="gi gi-asterisk"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label"
-                                   for="example-validation-confirm-password">Retapez le mot de passe <span
+                                   for="example-validation-confirm-password"> Retapez le mot de passe <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
                                 <div class="input-group">
@@ -136,8 +128,6 @@
                                     @error('confirm_password')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <span class="input-group-addon"><i
-                                            class="gi gi-asterisk"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -147,8 +137,8 @@
 
                     <div class="form-group form-actions">
                         <div class="col-md-8 col-md-offset-3">
-                            <button type="submit" class="btn btn-effect-ripple btn-primary">Enregistrer</button>
-                            <a href="{{route('user.index')}}" class="btn btn-effect-ripple btn-danger">Annuler</a>
+                            <button type="submit" class="btn btn-effect-ripple btn-primary"> Enregistrer</button>
+                            <a href="{{route('user.index')}}" class="btn btn-effect-ripple btn-danger"> Annuler </a>
                         </div>
                     </div>
                 </form>

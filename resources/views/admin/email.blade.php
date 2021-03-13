@@ -1,41 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-    <div id="page-content" class="inner-sidebar-left">
-        <!-- Inner Sidebar -->
-        <div id="page-content-sidebar">
-            <!-- Compose Message (Modal markup is at the bottom of this page before including JS scripts) -->
-            <div class="block-section">
-                <a href="#modal-compose" class="btn btn-effect-ripple btn-block btn-success" data-toggle="modal"><i
-                        class="fa fa-pencil"></i>Compose Message</a>
-            </div>
-            <!-- END Compose Message -->
-
-            <!-- Collapsible Navigation -->
-            <a href="javascript:void(0)" class="btn btn-block btn-effect-ripple btn-default visible-xs"
-               data-toggle="collapse" data-target="#email-nav">Navigation</a>
-            <div id="email-nav" class="collapse navbar-collapse remove-padding">
-                <!-- Menu -->
-                <div class="block-section">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li class="active">
-                            <a href="page_app_email.html">
-                                <i class="fa fa-fw fa-inbox icon-push"></i> <strong>Inbox</strong>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="fa fa-fw fa-send icon-push"></i> <strong>Sent</strong>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- END Menu -->
-            </div>
-        </div>
-
+    <div id="page-content">
         <!-- Email Center Content -->
-        <div class="block overflow-hidden">
+        <div class="block overflow-hidden col-sm-12 col-md-10">
             <!-- Message List -->
             <div id="message-list">
                 <!-- Title -->
@@ -123,72 +91,12 @@
                 <p>{{$emails->message}}</p>
                 <hr>
                 <!-- END Message Body -->
-
-                <!-- Quick Reply Form -->
-                <form action="page_app_email.html" method="post" onsubmit="return false;">
-                    <textarea id="message-quick-reply" name="message-quick-reply" rows="5" class="form-control push-bit"
-                              placeholder="Votre message.."></textarea>
-                    <button class="btn btn-effect-ripple btn-primary"><i class="fa fa-share"></i> Réponse</button>
-                </form>
-                <!-- END Quick Reply Form -->
             </div>
             <!-- END Message View -->
         </div>
         <!-- END Email Center Content -->
     </div>
     <!-- END Page Content -->
-
-
-
-    <!-- Compose Modal -->
-    <div id="modal-compose" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3 class="modal-title"><strong>Nouveau message</strong></h3>
-                </div>
-                <div class="modal-body">
-                    <form action="page_app_email.html" method="post" class="form-horizontal form-bordered"
-                          onsubmit="return false;">
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <select id="fcompose-users" name="fcompose-users" class="select-chosen"
-                                        data-placeholder="À.." style="width: 250px;" multiple="">
-                                    <option></option>
-                                    <!-- Required for data-placeholder attribute to work with Chosen plugin -->
-                                    <option value="john.doe">John Taylor</option>
-                                    <option value="sara.castillo">Sara Castillo</option>
-                                    <option value="rachel.fox">Rachel Fox</option>
-                                    <option value="vincent.johnson">Vincent Johnson</option>
-                                    <option value="russell.perkins">Russell Perkins</option>
-                                    <option value="denise.hill">Denise Hill</option>
-                                    <option value="helen.gomez">Helen Gomez</option>
-                                    <option value="marie.herrera">Marie Herrera</option>
-                                    <option value="charles.morris">Charles Morris</option>
-                                    <option value="janice.contreras">Janice Contreras</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <textarea id="fcompose-message" name="fcompose-message" rows="7" class="form-control"
-                                          placeholder="Rédigez votre message.."></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group form-actions">
-                            <div class="col-xs-12 text-right">
-                                <button type="submit" class="btn btn-effect-ripple btn-primary">Envoyer</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- END Compose Modal -->
-
 @endsection
 
 @section('scripts')

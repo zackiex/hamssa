@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('title','Edit Slider')
+@section('title','Edit Serie')
 @section('content')
     <div class="content-header">
         <div class="row">
             <div class="col-sm-6">
                 <div class="header-section">
-                    <h1>Slider</h1>
+                    <h1>Etit séries</h1>
                 </div>
             </div>
         </div>
@@ -26,20 +26,20 @@
             <div class="block">
                 <!-- Form Validation Title -->
                 <div class="block-title">
-                    <h2> Mettez à jour votre Slider </h2>
+                    <h2>Mettez à jour votre séries</h2>
                 </div>
                 <!-- END Form Validation Title -->
                 <!-- Form Validation Form -->
-                <form id="form-validation" action="{{route('slider.update',$data->id)}}" method="POST"
+                <form id="form-validation" action="{{route('serie.update',$data->id)}}" method="POST"
                       class="form-horizontal form-bordered" enctype="multipart/form-data">
                     @method('PATCH')
                     @csrf
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="val-username"> أعد تسمية عنوان شريط التمرير<span
+                        <label class="col-md-3 control-label" for="val-username">Titre AR<span
                                 class="text-danger">*</span></label>
                         <div class="col-md-6">
                             <input value="{{$data->title_ar}}" name="title_ar" type="text"
-                                   placeholder="يجب إدخال عنوان هنا ..."
+                                   placeholder="Vous devez saisir un titre ici.."
                                    class=" form-control @error('title_ar') is-invalid @enderror">
                             @error('title_ar')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="val-username"> Renommer le titre du Slider<span
+                        <label class="col-md-3 control-label" for="val-username">Titre FR <span
                                 class="text-danger">*</span></label>
                         <div class="col-md-6">
                             <input value="{{$data->title_fr}}" name="title_fr" type="text"
@@ -59,11 +59,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="val-username"> Rename the title of slider<span
+                        <label class="col-md-3 control-label" for="val-username">Titre EN <span
                                 class="text-danger">*</span></label>
                         <div class="col-md-6">
                             <input value="{{$data->title_en}}" name="title_en" type="text"
-                                   placeholder="You must enter a title here ..."
+                                   placeholder="Vous devez saisir un titre ici.."
                                    class=" form-control @error('title_en') is-invalid @enderror">
                             @error('title_en')
                             <div class="alert alert-danger">{{ $message }}</div>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="example-file-input"> Image Slider <span
+                        <label class="col-md-3 control-label" for="example-file-input">Fichier <span
                                 class="text-danger">*</span></label></label>
                         <div class="col-md-9">
                             <img src="{{asset('images/slider/'.$data->img_slider)}}" width="70" class="my-2">

@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="header-section">
-                    <h1>Slider</h1>
+                    <h1> Slider </h1>
                 </div>
             </div>
         </div>
@@ -18,47 +18,50 @@
             <div class="block">
                 <!-- Form Validation Title -->
                 <div class="block-title">
-                    <h2>Créer un nouveau slider</h2>
+                    <h2> Créer un nouveau slider </h2>
                 </div>
-                <form  action="{{route('slider.store')}}" method="POST"
+                <form action="{{route('slider.store')}}" method="POST"
                       class="form-horizontal form-bordered" enctype="multipart/form-data">
                     @method('POST')
                     @csrf
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="val-username">Titre AR<span
+                        <label class="col-md-3 control-label" for="val-username">عنوان شريط التمرير<span
                                 class="text-danger">*</span></label>
                         <div class="col-md-6">
-                            <input  value="{{old('title_ar')}}" name="title_ar" type="text" placeholder="Vous devez saisir un titre ici.."
-                                    class=" form-control @error('title_ar') is-invalid @enderror">
+                            <input value="{{old('title_ar')}}" name="title_ar" type="text"
+                                   placeholder="يجب إدخال عنوان هنا ..."
+                                   class=" form-control @error('title_ar') is-invalid @enderror">
                             @error('title_ar')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="val-username">Titre FR <span
+                        <label class="col-md-3 control-label" for="val-username"> Titre du Slider<span
                                 class="text-danger">*</span></label>
                         <div class="col-md-6">
-                            <input  value="{{old('title_fr')}}" name="title_fr" type="text" placeholder="Vous devez saisir un titre ici.."
-                                    class=" form-control @error('title_fr') is-invalid @enderror">
+                            <input value="{{old('title_fr')}}" name="title_fr" type="text"
+                                   placeholder="Vous devez saisir un titre ici.."
+                                   class=" form-control @error('title_fr') is-invalid @enderror">
                             @error('title_fr')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="val-username">Titre EN <span
+                        <label class="col-md-3 control-label" for="val-username"> Slider Title<span
                                 class="text-danger">*</span></label>
                         <div class="col-md-6">
-                            <input  value="{{old('title_en')}}" name="title_en" type="text" placeholder="Vous devez saisir un titre ici.."
-                                    class=" form-control @error('title_en') is-invalid @enderror">
+                            <input value="{{old('title_en')}}" name="title_en" type="text"
+                                   placeholder="You must enter a title here..."
+                                   class=" form-control @error('title_en') is-invalid @enderror">
                             @error('title_en')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="example-file-input">Fichier <span
+                        <label class="col-md-3 control-label" for="example-file-input"> Image du Slider <span
                                 class="text-danger">*</span></label>
                         <div class="col-md-9">
                             <input type="file" name="img_slider">
@@ -69,8 +72,8 @@
                     </div>
                     <div class="form-group form-actions">
                         <div class="col-md-8 col-md-offset-3">
-                            <button type="submit" class="btn btn-effect-ripple btn-primary">Enregistrer</button>
-                            <a  href="{{route('slider.index')}}" class="btn btn-effect-ripple btn-danger">Annuler</a>
+                            <button type="submit" class="btn btn-effect-ripple btn-primary"> Enregistrer</button>
+                            <a href="{{route('slider.index')}}" class="btn btn-effect-ripple btn-danger"> Annuler</a>
                         </div>
                     </div>
                 </form>

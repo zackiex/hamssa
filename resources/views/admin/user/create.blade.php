@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="header-section">
-                    <h1>Gestion des utilisateurs</h1>
+                    <h1> Gestion des utilisateurs </h1>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
             <div class="block">
                 <!-- Form Validation Title -->
                 <div class="block-title">
-                    <h2>Ajouter un utilisateur</h2>
+                    <h2> Ajouter un utilisateur</h2>
                 </div>
                 <form action="{{route('user.store')}}" method="POST" id="validation-wizard"
                       class="form-horizontal form-bordered" enctype="multipart/form-data">
@@ -52,19 +52,15 @@
                                 <ul class="nav nav-pills nav-justified">
                                     <li class="active disabled"><a href="javascript:void(0)"
                                                                    class="text-muted">
-                                            <i class="fa fa-user"></i> <strong>Compte</strong></a>
+                                            <i class="fa fa-user"></i> <strong> Nouveau Compte </strong></a>
                                     </li>
-                                    <li class="disabled"><a href="javascript:void(0)"><i
-                                                class="fa fa-info-circle"></i> <strong>Info</strong></a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- END Step Info -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="example-validation-username">Nom
-                                d'utilisateur
-                                <span
-                                    class="text-danger">*</span></label>
+                            <label class="col-md-4 control-label" for="example-validation-username"> Nom
+                                d'utilisateur <span class="text-danger">*</span></label>
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <input value="{{old('name')}}" type="text"
@@ -76,11 +72,10 @@
                                     @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="gi gi-user"></i></span>
                                 </div>
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="example-validation-email">Email
                                 <span
@@ -96,13 +91,11 @@
                                     @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <span class="input-group-addon"><i
-                                            class="gi gi-envelope"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="example-validation-password">Mot de
+                            <label class="col-md-4 control-label" for="example-validation-password"> Mot de
                                 passe
                                 <span
                                     class="text-danger">*</span></label>
@@ -116,14 +109,12 @@
                                     @error('password')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <span class="input-group-addon"><i
-                                            class="gi gi-asterisk"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label"
-                                   for="example-validation-confirm-password">Retapez le mot de passe <span
+                                   for="example-validation-confirm-password"> Retapez le mot de passe <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
                                 <div class="input-group">
@@ -134,8 +125,6 @@
                                     @error('confirm_password')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <span class="input-group-addon"><i
-                                            class="gi gi-asterisk"></i></span>
                                 </div>
                             </div>
                         </div>

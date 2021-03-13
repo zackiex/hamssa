@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('title','Paramètres utilisateur')
+@section('title','Paramètres des utilisateur')
 @section('content')
     <div class="content-header">
         <div class="row">
             <div class="col-sm-6">
                 <div class="header-section">
-                    <h1>Gestion des utilisateurs</h1>
+                    <h1> Gestion des utilisateurs </h1>
                 </div>
             </div>
         </div>
@@ -35,7 +35,7 @@
             <div class="block">
                 <!-- Form Validation Title -->
                 <div class="block-title">
-                    <h2>Ajouter un utilisateur</h2>
+                    <h2> Ajouter un utilisateur </h2>
                 </div>
                 <form action="{{route('UserSetting.update', auth()->user()->id)}}" method="POST"
                       id="validation-wizard"
@@ -52,17 +52,14 @@
                                                                    class="text-muted">
                                             <i class="fa fa-user"></i> <strong>Compte</strong></a>
                                     </li>
-                                    <li class="disabled"><a href="javascript:void(0)"><i
-                                                class="fa fa-info-circle"></i> <strong>Info</strong></a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- END Step Info -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="example-validation-username">Nom
+                            <label class="col-md-4 control-label" for="example-validation-username"> Nom
                                 d'utilisateur
-                                <span
-                                    class="text-danger">*</span></label>
+                                <span class="text-danger">*</span></label>
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <input value="{{auth()->user()->name}}"
@@ -75,8 +72,6 @@
                                     @error('name')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="gi gi-user"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -95,8 +90,6 @@
                                     @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <span class="input-group-addon"><i
-                                            class="gi gi-envelope"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -115,8 +108,6 @@
                                     @error('old_password')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <span class="input-group-addon"><i
-                                            class="gi gi-asterisk"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -135,8 +126,6 @@
                                     @error('new_password')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <span class="input-group-addon"><i
-                                            class="gi gi-asterisk"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -153,8 +142,6 @@
                                     @error('confirm_password')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                                    <span class="input-group-addon"><i
-                                            class="gi gi-asterisk"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -164,10 +151,10 @@
                     <!-- Form Buttons -->
                     <div class="form-group form-actions">
                         <div class="col-md-8 col-md-offset-4">
-                            <input type="reset" class="btn btn-sm btn-warning" id="back3" value="Remettre">
-                            <input type="submit" class="btn btn-sm btn-primary" id="next3" value="Enregistrer">
+                            <input type="reset" class="btn btn-sm btn-warning" id="back3" value=" Remettre ">
+                            <input type="submit" class="btn btn-sm btn-primary" id="next3" value=" Enregistrer ">
                             <a href="{{route('user.index')}}" type="submit" class="btn btn-sm btn-danger"
-                               id="next3">Annuler</a>
+                               id="next3"> Annuler </a>
                         </div>
                     </div>
 

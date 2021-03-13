@@ -78,7 +78,8 @@ class AboutAdminController extends Controller
             'mobile2' => 'required|digits:10',
             'telephonefixe' => 'required|min:9',
             'fax' => 'required|min:9',
-            'Gèolocalisation' => 'min:5|max:255',
+            'gèolocalisation_lat' => 'min:5|numeric',
+            'gèolocalisation_log' => 'min:5|numeric',
             'email' => 'email|required',
             'tempstravail_ar' => 'required|min:5|max:255',
             'tempstravail_fr' => 'required|min:5|max:255',
@@ -97,7 +98,8 @@ class AboutAdminController extends Controller
         $data->email = $request->email;
         $data->fax = $request->fax;
         $data->telephonefixe = $request->telephonefixe;
-        $data->Gèolocalisation = $request->Gèolocalisation;
+        $data->gèolocalisation_lat = $request->gèolocalisation_lat;
+        $data->gèolocalisation_log = $request->gèolocalisation_log;
         $data->tempstravail_ar = $request->tempstravail_ar;
         $data->tempstravail_fr = $request->tempstravail_fr;
         $data->tempstravail_en = $request->tempstravail_en;

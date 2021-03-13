@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('title','about')
+@section('title','About')
 @section('content')
     <div class="content-header">
         <div class="row">
             <div class="col-sm-6">
                 <div class="header-section">
-                    <h1>À propos</h1>
+                    <h1> À propos</h1>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
             <div class="block">
                 <!-- Form Validation Title -->
                 <div class="block-title">
-                    <h2>Hamssa</h2>
+                    <h2> À propos Hamssa </h2>
                 </div>
                 <!-- END Form Validation Title -->
                 <!-- Form Validation Form -->
@@ -46,14 +46,12 @@
                                                                    class="text-muted">
                                             <i class="fa fa-user"></i> <strong>Compte</strong></a>
                                     </li>
-                                    <li class="disabled"><a href="javascript:void(0)"><i
-                                                class="fa fa-info-circle"></i> <strong>Info</strong></a></li>
                                 </ul>
                             </div>
                         </div>
                         <!-- END Step Info -->
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="example-validation-username">Adresse
+                            <label class="col-md-4 control-label" for="example-validation-username"> Adresse
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -62,19 +60,17 @@
                                            id="example-validation-username"
                                            name="adresse" class="form-control"
                                            value="{{$data->adresse}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="Saisir votre adresse..."
                                            class=" form-control @error('adresse') is-invalid @enderror"
                                            required>
                                     @error('adresse')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="hi hi-map-marker"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-md-4 control-label" for="example-validation-username">Adresse AR
+                            <label class="col-md-4 control-label" for="example-validation-username">العنوان
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -83,20 +79,18 @@
                                            id="example-validation-username"
                                            name="adresse_ar" class="form-control"
                                            value="{{$data->adresse_ar}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="أدخل عنوانك ..."
                                            class=" form-control @error('adresse_ar') is-invalid @enderror"
                                            required>
                                     @error('adresse_ar')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="hi hi-map-marker"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="example-validation-username">Numéro de
-                                téléphone
+                                téléphone(+213)
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -105,20 +99,18 @@
                                            id="example-validation-username"
                                            name="mobile" class="form-control"
                                            value="{{$data->telephone}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="Entre votre numéro du téléphone..."
                                            class=" form-control @error('mobile') is-invalid @enderror"
                                            required>
                                     @error('mobile')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="fa fa-mobile"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="example-validation-username">
-                                Numéro de téléphone 2
+                                Numéro de téléphone(2) (+213)
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -127,20 +119,18 @@
                                            id="example-validation-username"
                                            name="mobile2" class="form-control"
                                            value="{{$data->telephone2}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="Entre votre deuxième numéro du téléphone..."
                                            class=" form-control @error('mobile2') is-invalid @enderror"
                                            required>
                                     @error('mobile2')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="fa fa-phone"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="example-validation-username">
-                                Telephone Fixe
+                                Teléphone Fixe(+213)
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -149,20 +139,18 @@
                                            id="example-validation-username"
                                            name="telephonefixe" class="form-control"
                                            value="{{$data->telephonefixe}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="Entre votre numéro du téléphone Fixe..."
                                            class=" form-control @error('telephonefixe') is-invalid @enderror"
                                            required>
                                     @error('telephonefixe')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="fa fa-phone-square"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="example-validation-username">
-                                Fax
+                                Fax(+213)
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -171,42 +159,58 @@
                                            id="example-validation-username"
                                            name="fax" class="form-control"
                                            value="{{$data->fax}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="Entre votre numéro du Fax..."
                                            class=" form-control @error('fax') is-invalid @enderror"
                                            required>
                                     @error('fax')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="fa fa-fax"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="example-validation-username">
-                                Gèolocalisation
+                                Coordonnées (GPS) latitude
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
                                 <div class="input-group">
                                     <input type="text"
                                            id="example-validation-username"
-                                           name="Gèolocalisation" class="form-control"
-                                           value="{{$data->Gèolocalisation}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
-                                           class=" form-control @error('Gèolocalisation') is-invalid @enderror"
+                                           name="gèolocalisation_lat" class="form-control"
+                                           value="{{$data->gèolocalisation_lat}}"
+                                           placeholder="48.862725"
+                                           class=" form-control @error('gèolocalisation_lat') is-invalid @enderror"
                                            required>
-                                    @error('Gèolocalisation')
+                                    @error('gèolocalisation_lat')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="fa fa-map"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="example-validation-username">
-                                Temps du travail FR
+                                Coordonnées (GPS) longitude
+                                <span
+                                    class="text-danger">*</span></label>
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <input type="text"
+                                           id="example-validation-username"
+                                           name="gèolocalisation_log" class="form-control"
+                                           value="{{$data->gèolocalisation_log}}"
+                                           placeholder="2.287592"
+                                           class=" form-control @error('gèolocalisation_log') is-invalid @enderror"
+                                           required>
+                                    @error('gèolocalisation_log')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="example-validation-username">
+                                Temps du travail
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -215,20 +219,18 @@
                                            id="example-validation-username"
                                            name="tempstravail_fr" class="form-control"
                                            value="{{$data->tempstravail_fr}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="Période de travail (Du 08:00 vers 17:00)"
                                            class=" form-control @error('tempstravail_fr') is-invalid @enderror"
                                            required>
                                     @error('tempstravail_fr')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="fa fa-hourglass"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="example-validation-username">
-                                Temps du travail EN
+                                Working time
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -237,20 +239,18 @@
                                            id="example-validation-username"
                                            name="tempstravail_en" class="form-control"
                                            value="{{$data->tempstravail_en}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="Working period (From 8 a.m. to 5 p.m.)"
                                            class=" form-control @error('tempstravail_en') is-invalid @enderror"
                                            required>
                                     @error('tempstravail_en')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="fa fa-hourglass"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="example-validation-username">
-                                Temps du travail AR
+                                وقت العمل
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -259,14 +259,12 @@
                                            id="example-validation-username"
                                            name="tempstravail_ar" class="form-control"
                                            value="{{$data->tempstravail_ar}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="فترة العمل (من الساعة 8 صباحًا حتى الساعة 5 مساءً)"
                                            class=" form-control @error('tempstravail_ar') is-invalid @enderror"
                                            required>
                                     @error('tempstravail_ar')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="fa fa-hourglass"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -281,20 +279,18 @@
                                            id="example-validation-username"
                                            name="email" class="form-control"
                                            value="{{$data->email}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="Entrez votre adresse Email"
                                            class=" form-control @error('email') is-invalid @enderror"
                                            required>
                                     @error('email')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="si si-e-mail"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="example-validation-username">
-                                Facebook
+                                Facebook Page
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -303,20 +299,18 @@
                                            id="example-validation-username"
                                            name="facebook" class="form-control"
                                            value="{{$data->facebook}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="www.facebook.com"
                                            class=" form-control @error('facebook') is-invalid @enderror"
                                            required>
                                     @error('facebook')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="si si-facebook"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="example-validation-username">
-                                Instagram
+                                Instagram Page
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -325,20 +319,18 @@
                                            id="example-validation-username"
                                            name="instagram" class="form-control"
                                            value="{{$data->instagram}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="www.instagram.com"
                                            class=" form-control @error('instagram') is-invalid @enderror"
                                            required>
                                     @error('instagram')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="si si-instagram"></i></span>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label" for="example-validation-username">
-                                Youtube
+                                YouTube Chaîne
                                 <span
                                     class="text-danger">*</span></label>
                             <div class="col-md-6">
@@ -347,14 +339,12 @@
                                            id="example-validation-username"
                                            name="youtube" class="form-control"
                                            value="{{$data->youtube}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="www.youtube.com"
                                            class=" form-control @error('youtube') is-invalid @enderror"
                                            required>
                                     @error('youtube')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="si si-youtube"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -369,14 +359,12 @@
                                            id="example-validation-username"
                                            name="twitter" class="form-control"
                                            value="{{$data->twitter}}"
-                                           placeholder="Choisissez un nom d'utilisateur.."
+                                           placeholder="www.twitter.com"
                                            class=" form-control @error('twitter') is-invalid @enderror"
-                                           required>
+                                    >
                                     @error('twitter')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-
-                                    <span class="input-group-addon"><i class="si si-twitter"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -386,8 +374,8 @@
 
                     <div class="form-group form-actions">
                         <div class="col-md-8 col-md-offset-3">
-                            <button type="submit" class="btn btn-effect-ripple btn-primary">Enregistrer</button>
-                            <a href="{{ url('/home') }}" class="btn btn-effect-ripple btn-danger">Annuler</a>
+                            <button type="submit" class="btn btn-effect-ripple btn-primary"> Enregistrer</button>
+                            <a href="{{ url('/home') }}" class="btn btn-effect-ripple btn-danger"> Annuler</a>
                         </div>
                     </div>
                 </form>

@@ -25,9 +25,9 @@ class SliderController extends Controller
     {
         $request->validate([
             'img_slider' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'title_en' => 'required|min:3|max:191|unique:sliders',
-            'title_fr' => 'required|min:3|max:191|unique:sliders',
-            'title_ar' => 'required|min:3|max:191|unique:sliders',
+            'title_en' => 'required|min:3|max:191',
+            'title_fr' => 'required|min:3|max:191',
+            'title_ar' => 'required|min:3|max:191',
         ]);
 
         if ($request->hasFile('img_slider')) {
@@ -55,9 +55,9 @@ class SliderController extends Controller
     {
         $request->validate([
             'img_slider' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'title_fr' => 'required|min:3|max:191|unique:sliders,title_fr,' .$id,
-            'title_ar' => 'required|min:3|max:191|unique:sliders,title_ar,' .$id,
-            'title_en' => 'required|min:3|max:191|unique:sliders,title_en,' .$id,
+            'title_fr' => 'required|min:3|max:191,' . $id,
+            'title_ar' => 'required|min:3|max:191,' . $id,
+            'title_en' => 'required|min:3|max:191,' . $id,
         ]);
 
         if ($request->hasFile('img_slider')) {
