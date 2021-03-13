@@ -95,9 +95,16 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about_content mt-40 wow fadeInLeftBig" data-wow-duration="1.3s" data-wow-delay="0.5s">
-                        <div class="section_title">
+                        <div class="section_title parab">
+
                             <h4 class="title">@lang("words.aboutus")</h4>
                             <p>@lang("words.text_about_us")</p>
+                            @if(LaravelLocalization::getCurrentLocale() == 'ar')
+                                <style>.parab {
+                                        text-align: right
+                                    }</style>
+                            @endif
+
                         </div> <!-- section title -->
 
                         <div class="about_progress">
@@ -161,10 +168,13 @@
 
                         <div class="about_social">
                             <ul class="social">
-                                <li><a href={{$about->facebook}}><i class="lni lni-facebook-filled"></i></a></li>
-                                <li><a href={{$about->twitter}}><i class="lni lni-twitter-original"></i></a></li>
-                                <li><a href={{$about->instagram}}><i class="lni lni-instagram-original"></i></a></li>
-                                <li><a href={{$about->youtube}}><i class="lni lni-youtube"></i></a></li>
+                                <li><a target="_blank" href={{$about->facebook}}><i class="lni lni-facebook-filled"></i></a>
+                                </li>
+                                <li><a target="_blank" href={{$about->twitter}}><i class="lni lni-twitter-original"></i></a>
+                                </li>
+                                <li><a target="_blank" href={{$about->instagram}}><i
+                                            class="lni lni-instagram-original"></i></a></li>
+                                <li><a target="_blank" href={{$about->youtube}}><i class="lni lni-youtube"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -263,12 +273,30 @@
     <!--====== MAP PART START ======-->
 
     <section class="map_area" id="maps">
-        <div class="gmap_canvas">
-            <iframe id="gmap_canvas"
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3851.5382011903853!2d4.750263182070393!3d36.071394003956264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sdz!4v1610370032363!5m2!1sen!2sdz"
-                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-        </div>
+        <div id="map" style="height: 500px;width: 100%"></div>
     </section>
+
+
+
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNZwuJ7Cvr7ccbkgkSHrRSbFR-PYJkfgY&callback=initMap&libraries=&v=weekly"
+        defer></script>
+    <script>
+        function initMap() {
+            const myLatLng = {lat: 36.0577165, lng: 4.7864741};
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: myLatLng,
+            });
+            new google.maps.Marker({
+                position: myLatLng,
+                map,
+                title: "Hello World!",
+            });
+        }
+    </script>
+
 
     <!--====== MAP PART ENDS ======-->
 @endsection

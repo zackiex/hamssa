@@ -46,20 +46,20 @@
                     </li>
                     <li>
                         <img src="{{asset('assets/images/icons/phone.png')}}" style="height: 30px;width: 30px">
-                            <br>
-                            <br>
+                        <br>
+                        <br>
                         <a>(+213) {{$about->telephone}}</a>
                     </li>
                     <li>
                         <img src="{{asset('assets/images/icons/fixe.png')}}" style="height: 30px;width: 30px">
-                            <br>
-                            <br>
+                        <br>
+                        <br>
                         <a>(+213) {{$about->telephonefixe}}</a>
                     </li>
                     <li>
-                       <img src="{{asset('assets/images/icons/fax.png')}}" style="height: 30px;width: 30px">
-                            <br>
-                            <br>
+                        <img src="{{asset('assets/images/icons/fax.png')}}" style="height: 30px;width: 30px">
+                        <br>
+                        <br>
                         <a>(+213) {{$about->fax}}</a>
                     </li>
 
@@ -69,14 +69,15 @@
         <div class="footer_social_copyright text-center d-sm-flex align-items-center justify-content-between">
             <div class="footer_social">
                 <ul class="social">
-                    <li><a href={{$about->facebook}}><i class="lni lni-facebook-filled"></i></a></li>
-                    <li><a href={{$about->twitter}}><i class="lni lni-twitter-original"></i></a></li>
-                    <li><a href={{$about->instagram}}><i class="lni lni-instagram-original"></i></a></li>
-                    <li><a href={{$about->youtube}}><i class="lni lni-youtube"></i></a></li>
+                    <li><a target="_blank" href={{$about->facebook}}><i class="lni lni-facebook-filled"></i></a></li>
+                    <li><a target="_blank" href={{$about->twitter}}><i class="lni lni-twitter-original"></i></a></li>
+                    <li><a target="_blank" href={{$about->instagram}}><i class="lni lni-instagram-original"></i></a>
+                    </li>
+                    <li><a target="_blank" href={{$about->youtube}}><i class="lni lni-youtube"></i></a></li>
                 </ul>
             </div>
             <div class="footer_copyright">
-                <p>Designed and Developed by <a href="#" rel="nofollow">Zakaria Attia</a></p>
+                <p>@lang("words.me") <a href="#" rel="nofollow">Zakaria Attia</a></p>
             </div>
         </div>
     </div>

@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="example-file-input">Fichier <span
-                                class="text-danger">*</span></label></label>
+                                class="text-danger">*</span></label>
                         <div class="col-md-9">
                             <input type="file" name="img_slider">
                             @error('img_slider')

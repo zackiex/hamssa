@@ -1,6 +1,7 @@
 <?php
 return [
     "name" => "Nom",
+    "me" => "Designe et développé par",
     "home" => "Accueil",
     "services" => "Services",
     "description" => "Description",

@@ -10,9 +10,10 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class IndexController extends Controller
 {
-    public  function index(){
-        $sliders = Slider::select('id','title_'.LaravelLocalization::getCurrentLocale().' as title' )->get();
-        return view('website.pages.index',compact('sliders'));
+    public function index()
+    {
+        $sliders = Slider::select('id', 'title_' . LaravelLocalization::getCurrentLocale() . ' as title')->get();
+        return view('website.pages.index', compact('sliders'));
     }
 
     public function store(Request $request)

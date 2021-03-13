@@ -48,9 +48,8 @@
 </head>
 
 <body dir="{{(App::isLocale('ar') ? 'rtl' : 'ltr')}}">
-
-
-<div class="preloader">
+<!--======
+ <div class="preloader">
     <div class="loader">
         <div class="ytp-spinner">
             <div class="ytp-spinner-container">
@@ -66,7 +65,7 @@
         </div>
     </div>
 </div>
-
+======-->
 <!--====== PRELOADER PART ENDS ======-->
 
 @include('website.layouts.navbar')

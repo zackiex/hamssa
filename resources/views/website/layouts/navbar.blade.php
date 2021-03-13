@@ -32,7 +32,7 @@
                                 <li class="nav-item">
                                     <a href="{{route('index')}}#about">@lang("words.about")</a>
                                 </li>
-                                <li class="dropdown nav-item">
+                                <li class="nav-item dropdown">
                                     <a href="#">@lang("words.categories")</a>
                                     <div class="dropdown-content">
                                         @foreach ($cat as $category)
@@ -57,7 +57,18 @@
                                 </li>
                             </ul>
                         </div>
-
+                        <script>
+                            // Add active class to the current button (highlight it)
+                            var header = document.getElementById("navbarSupportedContent");
+                            var btns = header.getElementsByClassName("nav-item");
+                            for (var i = 0; i < btns.length; i++) {
+                                btns[i].addEventListener("click", function () {
+                                    var current = document.getElementsByClassName("active");
+                                    current[0].className = current[0].className.replace(" active", "");
+                                    this.className += " active";
+                                });
+                            }
+                        </script>
                         <div class="dropdown ml-2">
                             <button class="btn btn-outline-danger dropdown-toggle" type="button" id="triggerId"
                                     data-toggle="dropdown" aria-haspopup="true"

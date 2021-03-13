@@ -14,7 +14,8 @@
             <!-- Sidebar Navigation -->
             <ul class="sidebar-nav">
                 <li>
-                    <a href="{{ url('/home') }}" class=" active"><i class="gi gi-compass sidebar-nav-icon"></i><span
+                    <a href="{{ url('/home') }}" class="active"><i
+                            class="gi gi-compass sidebar-nav-icon text-primary"></i><span
                             class="sidebar-nav-mini-hide">Dashboard</span></a>
                 </li>
                 <li class="sidebar-separator">
@@ -23,49 +24,54 @@
                 <li>
                     <a href="#" class="sidebar-nav-menu"><i
                             class="fa fa-chevron-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i
-                            class="fa fa-users sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Gestion des utilisateurs</span></a>
+                            class="fa fa-users sidebar-nav-icon text-success"></i>
+                        <span class="sidebar-nav-mini-hide">Gestion des utilisateurs</span></a>
                     <ul>
                         <li>
-                            <a href="{{ url('/user') }}">Utilisateurs</a>
+                            <a href="{{ url('/user') }}">Utilisateurs <i class="fa fa-user text-success"
+                                                                         style="padding-left: 5px"></i></a>
                         </li>
                         <li>
-                            <a href="{{ route('UserSetting.edit', auth()->user()->id) }}"><i class="fa fa-chevron"></i>Paramètres de
-                                compte</a>
+                            <a href="{{ route('UserSetting.edit', auth()->user()->id) }}"><i class="fa fa-chevron"></i>Paramètres
+                                de compte<i class="gi gi-settings text-success" style="padding-left: 5px"></i></a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="{{ url('/slider') }}"><i class="fa fa-file-image-o sidebar-nav-icon"></i><span
+                    <a href="{{ url('/slider') }}"><i
+                            class="fa fa-file-image-o sidebar-nav-icon text-warning"></i><span
                             class="sidebar-nav-mini-hide">Slider</span></a>
                 </li>
                 <li class="sidebar-separator">
                     <i class="fa fa-ellipsis-h"></i>
                 </li>
+
                 <li>
-                    <a href="#" class="sidebar-nav-menu"><i
-                            class="fa fa-chevron-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i
-                            class="gi gi-more_items sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Liste des catégories</span></a>
-                    <ul>
-                        <li>
-                            <a href="{{ url('/categories') }}">Catégories</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('/sousCategories') }}">Sous-catégories</a>
-                        </li>
-                    </ul>
+                    <a href="{{ url('/categories') }}"><i
+                            class="fa fa-pencil-square sidebar-nav-icon text-light"></i><span
+                            class="sidebar-nav-mini-hide">Catégories</span></a>
+                </li>
+                <li>
+                    <a href="{{ url('/serie') }}"><i class="fa fa-bars sidebar-nav-icon text-info"></i><span
+                            class="sidebar-nav-mini-hide">Séries</span></a>
+                </li>
+                <li>
+                    <a href="{{ url('/sousCategories') }}"><i
+                            class="fa fa-video-camera sidebar-nav-icon text-danger"></i><span
+                            class="sidebar-nav-mini-hide">Vidiés</span></a>
                 </li>
                 <li class="sidebar-separator">
                     <i class="fa fa-ellipsis-h"></i>
                 </li>
                 <li>
-                    <a href="{{ url('/about') }}"><i class="fa fa-info-circle sidebar-nav-icon"></i><span
+                    <a href="{{ url('/about') }}"><i class="fa fa-info-circle sidebar-nav-icon text-success"></i><span
                             class="sidebar-nav-mini-hide">About</span></a>
                 </li>
                 <li class="sidebar-separator">
                     <i class="fa fa-ellipsis-h"></i>
                 </li>
                 <li>
-                    <a href="{{ url('/email') }}"><i class="gi gi-inbox sidebar-nav-icon"></i><span
+                    <a href="{{ url('/email') }}"><i class="gi gi-inbox sidebar-nav-icon text-warning"></i><span
                             class="sidebar-nav-mini-hide">Email Center</span></a>
                 </li>
                 <li class="sidebar-separator">
@@ -76,7 +82,7 @@
 
                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
                        document.getElementById('logout-form').submit();">
-                        <i class="gi gi-log_out sidebar-nav-icon"></i><span
+                        <i class="gi gi-log_out sidebar-nav-icon text-danger"></i><span
                             class="sidebar-nav-mini-hide">Déconnecter</span></a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf

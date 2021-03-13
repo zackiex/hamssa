@@ -17,6 +17,8 @@ Auth::routes(['verify' => false, 'register' => true]);
 Route::middleware(['auth'])->group(function () {
     Route::get('home', 'HomeController@index');
     Route::resource('about', 'AboutAdminController');
+    Route::resource('about', 'AboutAdminController');
+    Route::resource('serie', 'SerieController');
     Route::resource('user', 'UserAdminController');
     Route::resource('UserSetting', 'UserSettingAdminController');
     Route::resource('slider', 'SliderController');

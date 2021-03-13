@@ -11,7 +11,6 @@ class SousCategoriesAdminController extends Controller
 
     public function index()
     {
-
         $sousCategories = SousCategoriesAdmin::with('category')->latest()->get();
         return view('admin.sousCategories', compact('sousCategories'));
     }
@@ -56,7 +55,6 @@ class SousCategoriesAdminController extends Controller
             'project_fr' => 'min:3|max:100|nullable',
             'project_ar' => 'min:3|max:100|nullable',
             'img_sous_category' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-
         ]);
 
         if ($request->hasFile('img_sous_category')) {
