@@ -43,8 +43,8 @@
                        class="table table-striped table-bordered table-vcenter table-hover">
                     <thead>
                     <tr>
+                        <th>Catégorie</th>
                         <th>Nom de la séries français</th>
-                        <th>Name of the series in English</th>
                         <th>اسم المسلسل باللغة الفرنسية</th>
                         <th>Image de la série</th>
                         <th class="text-center" style="width: 75px;"><i class="fa fa-flash"></i></th>
@@ -53,13 +53,13 @@
                     <tbody>
                     @foreach ($serie as $serieAll)
                         <tr>
-                            <td><strong>{{$serieAll->	name_fr}}</strong></td>
+                            <td><strong>{{$serieAll->category->name_categorie_fr}}</strong></td>
                             <td><strong>{{$serieAll->	name_en}}</strong></td>
                             <td><strong>{{$serieAll->	name_ar}}</strong></td>
                             <td><img src="{{asset('images/serie/'.$serieAll->img_serie)}}" width="70"
                                      style="border-radius: 5px"></td>
                             <td class="text-center">
-                                <a href="{{ route('categories.edit', $serieAll->id) }}" data-toggle="tooltip"
+                                <a href="{{ route('serie.edit', $serieAll->id) }}" data-toggle="tooltip"
                                    title="Edit"
                                    class="btn btn-effect-ripple btn-xs btn-success"><i class="fa fa-pencil"></i></a>
                                 <button data-toggle="modal" data-target="#confirm_modal_{{$serieAll->id}}"

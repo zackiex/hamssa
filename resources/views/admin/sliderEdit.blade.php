@@ -72,7 +72,7 @@
                     </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label" for="example-file-input"> Image Slider <span
-                                class="text-danger">*</span></label></label>
+                                class="text-danger">*</span></label>
                         <div class="col-md-9">
                             <img src="{{asset('images/slider/'.$data->img_slider)}}" width="70" class="my-2">
                             <input type="file" name="img_slider">

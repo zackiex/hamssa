@@ -40,7 +40,7 @@ class SerieController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id_category' => 'required|numeric',
+            'id_category' => 'required',
             'name_fr' => 'required|min:3|max:100',
             'name_ar' => 'required|min:3|max:100',
             'name_en' => 'required|min:3|max:100',
@@ -82,7 +82,9 @@ class SerieController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categoriesAdmin = CategoriesAdmin::latest()->get();
+        $data = Serie::findOrFail($id);
+        return view('admin.serieEdit', compact('data', 'categoriesAdmin'));
     }
 
     /**
@@ -94,7 +96,30 @@ class SerieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'id_category' => 'required',
+            'name_fr' => 'required|min:3|max:100',
+            'name_ar' => 'required|min:3|max:100',
+            'name_en' => 'required|min:3|max:100',
+            'img_serie' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
+
+        if ($request->hasFile('img_serie')) {
+            $imageName = time() . '.' . $request->img_serie->getClientOriginalExtension();
+            $request->img_serie->move(public_path('images/serie'), $imageName);
+        }
+
+        $data = Serie::find($id);
+        $data->img_serie = $request->hasFile('img_serie') ? $imageName : $data->img_serie;
+        $data->id_category = $request->id_category;
+        $data->name_ar = $request->name_ar;
+        $data->name_fr = $request->name_fr;
+        $data->name_en = $request->name_en;
+
+        $data->save();
+
+        return redirect('/serie')->with('success', 'Les données sont enregistrées avec succès');
+
     }
 
     /**
