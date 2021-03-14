@@ -101,7 +101,7 @@ class SerieController extends Controller
             'name_fr' => 'required|min:3|max:100',
             'name_ar' => 'required|min:3|max:100',
             'name_en' => 'required|min:3|max:100',
-            'img_serie' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'img_serie' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         if ($request->hasFile('img_serie')) {

@@ -1,18 +1,18 @@
 @extends('layouts.master')
-@section('title','Serie')
+@section('title','Vidéos')
 @section('content')
     <div class="content-header">
         <div class="row">
             <div class="col-sm-6">
                 <div class="header-section">
-                    <h1>Listes des series</h1>
+                    <h1>Liste des vidéos</h1>
                 </div>
             </div>
             <div class="col-sm-6 hidden-xs">
                 <div class="header-section">
                     <div class="breadcrumb breadcrumb-top">
-                        <a href="{{route('serie.create')}}" class="btn btn-primary">
-                            <i class="gi gi-plus"></i> <Strong> Ajouter une nouvelle série</Strong>
+                        <a href="{{route('video.create')}}" class="btn btn-primary">
+                            <i class="gi gi-plus"></i> Ajouter une nouvelle vidéo
                         </a>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
     <div class="block">
         <!-- Form Validation Title -->
         <div class="block-title">
-            <h2>List des séries</h2>
+            <h2>Liste vidéos</h2>
         </div>
         <!-- END Form Validation Title -->
         @if (session('success'))
@@ -44,32 +44,32 @@
                     <thead>
                     <tr>
                         <th>Catégorie</th>
-                        <th>Nom de la séries français</th>
-                        <th>اسم المسلسل باللغة الفرنسية</th>
-                        <th>Image de la série</th>
+                        <th>Titre de la serie</th>
+                        <th>Titre de la vidéo</th>
+                        <th>Image</th>
                         <th class="text-center" style="width: 75px;"><i class="fa fa-flash"></i></th>
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($serie as $serieAll)
+                    @foreach ($video as $videos)
                         <tr>
-                            <td><strong>{{$serieAll->category->name_categorie_fr}}</strong></td>
-                            <td><strong>{{$serieAll->name_en}}</strong></td>
-                            <td><strong>{{$serieAll->name_ar}}</strong></td>
-                            <td><img src="{{asset('images/serie/'.$serieAll->img_serie)}}" width="70" style="border-radius: 5px"></td>
+                            <td><strong>{{$videos->serie->category->name_categorie_fr}}</strong></td>
+                            <td><strong>{{$videos->serie->name_fr}}</strong></td>
+                            <td><strong>{{$videos->title_fr}}</strong></td>
+                            <td><strong><img src="{{asset('images/video/'.$videos->img_video)}}" width="70"
+                                             style="border-radius: 5px"></strong></td>
                             <td class="text-center">
-                                <a href="{{ route('serie.edit', $serieAll->id) }}" data-toggle="tooltip"
-                                   title="Edit"
+                                <a href="{{ route('video.edit', $videos->id) }}" data-toggle="tooltip" title="Edit"
                                    class="btn btn-effect-ripple btn-xs btn-success"><i class="fa fa-pencil"></i></a>
-                                <button data-toggle="modal" data-target="#confirm_modal_{{$serieAll->id}}"
+                                <button data-toggle="modal" data-target="#confirm_modal_{{$videos->id}}"
                                         data-toggle="tooltip" title="Delete User"
                                         class="btn btn-effect-ripple btn-xs btn-danger"><i
                                         class="fa fa-times"></i></button>
                             </td>
                         </tr>
                         <!----------------Start confirm model----------------------->
-                        <div class="modal" id="confirm_modal_{{$serieAll->id}}" tabindex="-1" role="dialog"
-                             aria-labelledby="confirm_modal_{{$serieAll->id}}" aria-hidden="true">
+                        <div class="modal" id="confirm_modal_{{$videos->id}}" tabindex="-1" role="dialog"
+                             aria-labelledby="confirm_modal_{{$videos->id}}" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -78,7 +78,7 @@
                                     <div class="modal-body">
                                         <h4>Etes-vous sûr de supprimer cette élement?</h4>
                                         <div class="modal-footer">
-                                            <form action="{{ route('serie.destroy', $serieAll->id) }}"
+                                            <form action="{{ route('video.destroy', $videos->id) }}"
                                                   method="POST">
                                                 @csrf
                                                 @method('DELETE')

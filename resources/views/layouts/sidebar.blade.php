@@ -56,9 +56,9 @@
                             class="sidebar-nav-mini-hide">Séries</span></a>
                 </li>
                 <li>
-                    <a href="{{ url('/sousCategories') }}"><i
+                    <a href="{{ url('/video') }}"><i
                             class="fa fa-video-camera sidebar-nav-icon text-danger"></i><span
-                            class="sidebar-nav-mini-hide">Vidiés</span></a>
+                            class="sidebar-nav-mini-hide">Vidéos</span></a>
                 </li>
                 <li class="sidebar-separator">
                     <i class="fa fa-ellipsis-h"></i>

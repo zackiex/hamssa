@@ -29,6 +29,7 @@
                     <h2> Mettez à jour vos séries </h2>
                 </div>
                 <!-- END Form Validation Title -->
+
                 <!-- Form Validation Form -->
                 <form id="form-validation" action="{{route('serie.update',$data->id)}}" method="POST"
                       class="form-horizontal form-bordered" enctype="multipart/form-data">
@@ -92,7 +93,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" for="example-file-input"> Image Série <span
+                        <label class="col-md-3 control-label" for="example-file-input">Image Série <span
                                 class="text-danger">*</span></label>
                         <div class="col-md-9">
                             <img src="{{asset('images/serie/'.$data->img_serie)}}" width="70" class="my-2">
@@ -105,7 +106,7 @@
                     <div class="form-group form-actions">
                         <div class="col-md-8 col-md-offset-3">
                             <button type="submit" class="btn btn-effect-ripple btn-primary"> Enregistrer</button>
-                            <a href="{{route('slider.index')}}" class="btn btn-effect-ripple btn-danger"> Annuler</a>
+                            <a href="{{route('serie.index')}}" class="btn btn-effect-ripple btn-danger"> Annuler</a>
                         </div>
                     </div>
                 </form>

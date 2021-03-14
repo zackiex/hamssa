@@ -43,6 +43,7 @@ class CreateVideosTable extends Migration
             $table->string('agency_ar')->nullable();
             $table->text('project_fr')->nullable();
             $table->text('project_ar')->nullable();
+            $table->timestamps();
         });
     }
 
