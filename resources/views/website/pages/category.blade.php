@@ -1,6 +1,6 @@
 @extends('website.layouts.master')
 
-@section('title','Category')
+@section('title','Catégorie')
 
 @section('content')
     <!--====== SERVICES PART START ======-->h
@@ -40,20 +40,20 @@
                 </div>
             </div> <!-- row -->
             <div class="row">
-                @foreach ($vedios as $vedio)
+                @foreach ($serie as $series)
                     <div class="col-md-4">
                         <div class="single_services text-center mt-30 wow fadeIn"
                              data-wow-duration="1.3s"
                              data-wow-delay="0.2s">
-                            <a href="{{ route('vedio.show', $vedio->id) }}">
-                                <img src="{{asset('images/sous_category/'.$vedio->img_sous_category)}}">
+                            <a href="{{ route('vedio.show', $series->id) }}">
+                                <img src="{{asset('images/serie/'.$series->img_serie)}}">
                                 <h4 class="title">
                                     @if(LaravelLocalization::getCurrentLocale() == 'ar')
-                                        {{$vedio->sous_categorie_ar}}
+                                        {{$series->name_ar}}
                                     @elseif(LaravelLocalization::getCurrentLocale() == 'en')
-                                        {{$vedio->sous_categorie_en}}
+                                        {{$series->name_en}}
                                     @else
-                                        {{$vedio->sous_categorie_fr}}
+                                        {{$series->name_fr}}
                                     @endif
                                 </h4>
                             </a>

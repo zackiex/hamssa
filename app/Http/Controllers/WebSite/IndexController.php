@@ -32,6 +32,4 @@ class IndexController extends Controller
         $data->save();
         return redirect('/')->with('success', 'Votre Email a été envoye');
     }
-
-
 }

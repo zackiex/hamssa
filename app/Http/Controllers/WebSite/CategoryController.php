@@ -4,7 +4,9 @@ namespace App\Http\Controllers\WebSite;
 
 use App\CategoriesAdmin;
 use App\Http\Controllers\Controller;
+use App\Serie;
 use App\SousCategoriesAdmin;
+use App\Video;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class CategoryController extends Controller
@@ -16,21 +18,20 @@ class CategoryController extends Controller
 
     public function show($id)
     {
-        $vedios = SousCategoriesAdmin::where('id_categorie', $id)->latest()->get();
-        $category= CategoriesAdmin::find($id);
+        $serie = Serie::where('id_category', $id)->latest()->get();
+        $category = CategoriesAdmin::find($id);
         $category_name = '';
-        if(LaravelLocalization::getCurrentLocale() == 'ar'){
+        if (LaravelLocalization::getCurrentLocale() == 'ar') {
             $category_name = $category->name_categorie_ar;
-        }
-        elseif(LaravelLocalization::getCurrentLocale() == 'fr'){
+        } elseif (LaravelLocalization::getCurrentLocale() == 'fr') {
             $category_name = $category->name_categorie_fr;
-        }else{
+        } else {
             $category_name = $category->name_categorie_en;
         }
-        if (count($vedios) == 0) {
+        if (count($serie) == 0) {
             return abort('404');
         }
-        return view('website.pages.category', compact('vedios','category_name'));
+        return view('website.pages.category', compact('serie', 'category_name'));
     }
 
 }
